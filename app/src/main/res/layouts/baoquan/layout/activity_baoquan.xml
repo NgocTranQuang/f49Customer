@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="data"
+                type="com.vn.f49kh.activity.baoquan.BaoQuanViewModel" />
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_toolbar"
+                android:stateListAnimator="@animator/toolbar_elevated"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/tb"
+                    style="@style/CommonToolbar"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <ScrollView
+                    style="@style/CommonScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/lnBottom"
+                    android:clipToPadding="false"
+                    android:padding="@dimen/activity_horizontal_margin">
+
+                <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:elevation="@dimen/card_elevation"
+                        app:cardCornerRadius="@dimen/card_big_elevation">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:orientation="vertical">
+
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                            <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cvTaiSanNho"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:elevation="@dimen/card_elevation"
+                                    app:cardBackgroundColor="@color/colorPrimary"
+                                    app:cardCornerRadius="@dimen/card_big_elevation">
+
+                                <TextView
+                                        android:id="@+id/tvTaiSanNho"
+                                        style="@style/CommonTextView.CommonTextViewHuongDan"
+                                        android:drawableEnd="@drawable/ic_baoquan_arrow_up"
+                                        android:text="@string/doi_voi_tai_san_nho" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <LinearLayout
+                                    android:id="@+id/lnContentTaiSanNho"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="visible">
+
+                                <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:weightSum="3">
+
+                                    <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                        <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:src="@drawable/ic_dinhgia_mayanh" />
+
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/may_anh" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                        <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:src="@drawable/ic_dinhgia_dienthoai" />
+
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/dien_thoai" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                        <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:src="@drawable/ic_dinhgia_laptop" />
+
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/lap_top" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="01" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/ki_m_tra_v_x_c_nh_n_t_nh_tr_ng_t_i_s_n_v_i_kh_ch_h_ng" />
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="02" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/cho_v_o_t_i_b_o_qu_n" />
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="03" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/ni_m_phong_b_ng_tem_v_i_s_ch_ng_ki_n_c_a_kh_ch_h_ng" />
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="04" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/l_u_gi_t_i_s_n_v_o_k_t_b_o_m_t" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cvTaiSanLon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                    android:elevation="@dimen/card_elevation"
+                                    app:cardBackgroundColor="@color/colorPrimary"
+                                    app:cardCornerRadius="@dimen/card_big_elevation">
+
+                                <TextView
+                                        android:id="@+id/tvTaiSanLon"
+                                        style="@style/CommonTextView.CommonTextViewHuongDan"
+                                        android:text="@string/i_v_i_t_i_s_n_l_n" />
+                            </com.google.android.material.card.MaterialCardView>
+
+
+                            <LinearLayout
+                                    android:id="@+id/lnContentTaiSanLon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="gone">
+
+                                <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:weightSum="2">
+
+                                    <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                        <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:src="@drawable/ic_dinhgia_oto" />
+
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/oto" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                        <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:src="@drawable/ic_dinhgia_xemay" />
+
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/xe_may" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="01" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/ki_m_tra_v_x_c_nh_n_t_nh_tr_ng_t_i_s_n_v_i_kh_ch_h_ng" />
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="02" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/thuc_hien_chot_cong" />
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="03" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/ghi_tem" />
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="04" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/chuyen_xe" />
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="05" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/truoc_khi_tra" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cvHeThongCamera"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                    android:elevation="@dimen/card_elevation"
+                                    app:cardBackgroundColor="@color/colorPrimary"
+                                    app:cardCornerRadius="@dimen/card_big_elevation">
+
+                                <TextView
+                                        android:id="@+id/tvHeThong"
+                                        style="@style/CommonTextView.CommonTextViewHuongDan"
+                                        android:text="@string/h_th_ng_camera_nh_th_ng_ph_ng_ch_y_ch_a_ch_y" />
+                            </com.google.android.material.card.MaterialCardView>
+
+
+                            <LinearLayout
+                                    android:id="@+id/lnContentHeThongCamera"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="gone">
+
+                                <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:weightSum="2">
+
+                                    <LinearLayout style="@style/LnBaoQuan.Left">
+
+                                        <ImageView
+                                                style="@style/ImageBaoQuan"
+                                                android:imageUrl="@{data.image1}" />
+                                    </LinearLayout>
+
+                                    <LinearLayout style="@style/LnBaoQuan">
+
+                                        <ImageView
+                                                style="@style/ImageBaoQuan"
+                                                android:imageUrl="@{data.image2}" />
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:weightSum="2">
+
+                                    <LinearLayout style="@style/LnBaoQuan.Left">
+
+                                        <ImageView
+                                                style="@style/ImageBaoQuan"
+                                                android:imageUrl="@{data.image3}" />
+                                    </LinearLayout>
+
+                                    <LinearLayout style="@style/LnBaoQuan">
+
+                                        <ImageView
+                                                style="@style/ImageBaoQuan"
+                                                android:imageUrl="@{data.image4}" />
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:weightSum="2">
+
+                                    <LinearLayout style="@style/LnBaoQuan.Left">
+
+                                        <ImageView
+                                                style="@style/ImageBaoQuan"
+                                                android:imageUrl="@{data.image5}" />
+                                    </LinearLayout>
+
+                                    <LinearLayout style="@style/LnBaoQuan">
+
+                                        <ImageView
+                                                style="@style/ImageBaoQuan"
+                                                android:imageUrl="@{data.image6}" />
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </ScrollView>
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

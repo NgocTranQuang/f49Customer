@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="data"
+                type="com.vn.f49kh.model.taisan.TaiSanDTO" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="@dimen/card_big_elevation"
+            app:cardElevation="@dimen/height_line_size">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_410"
+                android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:cardElevation="0dp"
+                    android:layout_margin="@dimen/dp_10"
+                    app:cardCornerRadius="@dimen/card_big_elevation">
+
+                <ImageView
+                        android:layout_width="@dimen/dp_395"
+                        android:layout_height="match_parent"
+                        android:imageUrl="@{data.imageURL}"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/ic_launcher" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/toolbar_half_padding_horizontal">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:text="@{data.name}" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/open_sans"
+                            android:text="@{data.dongGiua}"
+                            android:textColor="@color/text_color_price"
+                            android:textSize="@dimen/dp_36" />
+
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:money="@{data.price}"
+                            android:textColor="@color/color_orange" />
+                </RelativeLayout>
+
+                <ImageView
+                        android:layout_width="@dimen/dp_87"
+                        android:layout_height="@dimen/dp_87"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/ic_next" />
+            </RelativeLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

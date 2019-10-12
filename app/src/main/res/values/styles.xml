@@ -1,11 +1,162 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/TextViewStyle</item>
+        <item name="android:statusBarColor">@color/color_start_bg_toolbar</item>
+    </style>
+
+    <style name="TextViewStyle">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textSize">@dimen/dp_48</item>
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+    </style>
+
+    <style name="TabTitleTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/dp_30</item>
+    </style>
+
+    <style name="CommonTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/dp_48</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:drawablePadding">@dimen/padding_editext</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="CommonTextView.CommonTextViewHuongDan">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:padding">@dimen/toolbar_half_padding_horizontal</item>
+        <item name="android:drawableEnd">@drawable/ic_baoquan_arrow_down</item>
+    </style>
+
+    <style name="CommonTextViewItemHuongDan">
+        <item name="android:layout_width">@dimen/dp_94</item>
+        <item name="android:layout_height">@dimen/dp_94</item>
+        <item name="android:background">@drawable/bg_circle_orage</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="CommonTextViewContentHuongDan">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/toolbar_half_padding_horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="LnCommonTextViewHuongDan">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/toolbar_half_padding_horizontal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_corner_green_nhat</item>
+        <item name="android:layout_marginTop">@dimen/toolbar_half_padding_horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="CommonRecylerview">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CommonScrollView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="LnBaoQuan">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_top_border_white</item>
+    </style>
+    <style name="AppBottomSheetDialogTheme"
+            parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+    <style name="LnBaoQuan.Left">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginEnd">@dimen/toolbar_half_padding_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+
+    </style>
+
+
+    <style name="ImageBaoQuan">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_marginTop">@dimen/toolbar_half_padding_horizontal</item>
+        <item name="android:layout_height">@dimen/height_image_baoquan</item>
+
+    </style>
+
+    <style name="CommonTextView.CommonTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="CommonTextView.CommonEditText">
+        <item name="android:layout_marginTop">@dimen/toolbar_half_padding_horizontal</item>
+        <item name="android:background">@drawable/bg_boder_gray</item>
+        <item name="android:padding">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="CommonToolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:contentInsetStart">0dp</item>
+        <item name="android:contentInsetEnd">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="android:textSize">@dimen/dp_48</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="ItemBottomSheet">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:paddingTop">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingBottom">@dimen/activity_horizontal_margin</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:orientation">horizontal</item>
+
+    </style>
+
+    <style name="ImageBottomSheet">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginStart">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="Line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/color_line_divider_light</item>
     </style>
 
 </resources>

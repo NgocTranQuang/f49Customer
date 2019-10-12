@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_toolbar"
+                android:stateListAnimator="@animator/toolbar_elevated"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/tb"
+                    style="@style/CommonToolbar"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <ScrollView
+                    style="@style/CommonScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/lnBottom"
+                    android:clipToPadding="false"
+                    android:padding="@dimen/activity_horizontal_margin">
+
+                <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:elevation="@dimen/card_elevation"
+                        app:cardCornerRadius="@dimen/card_big_elevation">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:gravity="center"
+                                android:text="@string/title_huongdan"
+                                android:textColor="@color/color_orange"
+                                android:textSize="@dimen/dp_85" />
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:gravity="center"
+                                android:text="@string/b_n_c_t_i_s_n_l_t_xe_m_y_b_n_ng_i_n_nh_ng_c_a_hi_u_c_m_do_vang_lai"
+                                android:textSize="@dimen/dp_36" />
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:gravity="center"
+                                android:text="@string/welcome"
+                                android:textSize="@dimen/dp_36" />
+
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                            <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cvCamDoOnline"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                    android:elevation="@dimen/card_elevation"
+                                    app:cardBackgroundColor="@color/colorPrimary"
+                                    app:cardCornerRadius="@dimen/card_big_elevation">
+
+                                <TextView
+                                        android:id="@+id/tvCamdoOnline"
+                                        style="@style/CommonTextView.CommonTextViewHuongDan"
+                                        android:drawableEnd="@drawable/ic_baoquan_arrow_up"
+                                        android:text="@string/c_m_online" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <LinearLayout
+                                    android:id="@+id/lnContentCamDoOnline"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="01" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/truy_c_p_f49_vn_t_y_u_c_u_c_m_g_i_th_ng_tin_t_i_s_n_cho_f49" />
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="02" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/th_m_nh_gi_t_i_s_n_v_x_c_nh_p_s_ti_n_c_th_c_m" />
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="03" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/f49_ti_n_h_nh_k_h_p_ng_v_trao_ti_n_t_i_nh_kh_ch_h_ng" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cvCamDoTaiCuaHang"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                    android:elevation="@dimen/card_elevation"
+                                    app:cardBackgroundColor="@color/colorPrimary"
+                                    app:cardCornerRadius="@dimen/card_big_elevation">
+
+                                <TextView
+                                        android:id="@+id/tvCamdoTaiCuahang"
+                                        style="@style/CommonTextView.CommonTextViewHuongDan"
+                                        android:text="@string/cam_do_tai_cua_hang" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <LinearLayout
+                                    android:id="@+id/lnContentCamDoTaiCuaHang"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="gone">
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="01" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/khach_hang_mang_tai_san_toi_cua_hang_f49" />
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="02" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/th_m_nh_gi_t_i_s_n_v_x_c_nh_n_s_ti_n_c_th_c_m" />
+
+                                </LinearLayout>
+
+                                <LinearLayout style="@style/LnCommonTextViewHuongDan">
+
+                                    <TextView
+                                            style="@style/CommonTextViewItemHuongDan"
+                                            android:text="03" />
+
+                                    <TextView
+                                            style="@style/CommonTextViewContentHuongDan"
+                                            android:text="@string/f49_ti_n_h_ng_k_h_p_ng_v_trao_ti_n_cho_kh_ch_h_ng" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </ScrollView>
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

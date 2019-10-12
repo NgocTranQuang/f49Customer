@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_screen"
+            android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_toolbar"
+                android:stateListAnimator="@animator/toolbar_elevated"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/tb"
+                    style="@style/CommonToolbar"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        android:padding="@dimen/activity_horizontal_margin">
+
+                    <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="@dimen/card_big_elevation"
+                            app:cardElevation="@dimen/card_elevation">
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="@string/chon_tai_san_muon_dinh_gia"
+                                    android:textAllCaps="true"
+                                    android:textSize="@dimen/dp_36" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvDinhGia"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_1128">
+
+                            </androidx.recyclerview.widget.RecyclerView>
+
+                            <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                                    android:orientation="vertical">
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/nhap_thong_tin_tai_san" />
+
+                                <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                        android:background="@drawable/bg_boder_gray"
+                                        android:fontFamily="@font/open_sans"
+                                        android:hint="@string/vd_apple_iphone_8_64_gb"
+                                        android:padding="@dimen/activity_horizontal_margin" />
+
+                                <LinearLayout
+                                        android:id="@+id/lnUploadImage"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                    <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:padding="@dimen/toolbar_half_padding_horizontal"
+                                            android:background="@drawable/bg_radius_pri"
+                                            android:src="@drawable/ic_dinhgia_upload_image" />
+
+                                    <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/activity_horizontal_margin"
+                                            android:text="@string/hinh_anh_tai_san" />
+                                </LinearLayout>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rvImage"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/activity_horizontal_margin"></androidx.recyclerview.widget.RecyclerView>
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                        android:text="@string/thong_tin_lien_he" />
+
+                                <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                        android:background="@drawable/bg_boder_gray"
+                                        android:fontFamily="@font/open_sans"
+                                        android:hint="@string/nhap_ho_va_ten"
+                                        android:padding="@dimen/activity_horizontal_margin" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                        android:text="@string/so_dien_thoai" />
+
+                                <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                                        android:background="@drawable/bg_boder_gray"
+                                        android:fontFamily="@font/open_sans"
+                                        android:hint="@string/nhap_so_dt"
+                                        android:padding="@dimen/activity_horizontal_margin" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_173"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorWhite"
+                            android:clipToPadding="false"
+                            android:gravity="center"
+                            android:padding="@dimen/toolbar_half_padding_horizontal"
+                            android:visibility="invisible">
+
+                        <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:foreground="?selectableItemBackground"
+                                app:cardBackgroundColor="@color/colorPrimary"
+                                app:cardCornerRadius="@dimen/card_big_elevation"
+                                app:cardElevation="@dimen/card_elevation">
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="@string/gui_dinh_gia"
+                                    android:textColor="@color/colorWhite" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_173"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/bg_border_gray_only_top"
+                    android:clipToPadding="false"
+                    android:gravity="center"
+                    android:padding="@dimen/toolbar_half_padding_horizontal">
+
+                <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/dp_468"
+                        android:layout_height="match_parent"
+                        android:foreground="?selectableItemBackground"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="@dimen/card_big_elevation"
+                        app:cardElevation="@dimen/card_elevation">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/activity_horizontal_margin"
+                            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:text="@string/gui_dinh_gia"
+                            android:textColor="@color/colorWhite" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

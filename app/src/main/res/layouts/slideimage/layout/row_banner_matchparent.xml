@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+                name="item"
+                type="com.xxx.baseproject.imageslide.AdapterBanner.ViewHolderMatchParent" />
+    </data>
+
+    <RelativeLayout
+            android:layout_width="@dimen/dp_1242"
+            android:layout_height="@dimen/dp_768"
+            android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+        <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvBanner"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_height="@dimen/dp_768"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="@dimen/card_big_elevation"
+                app:cardElevation="0dp">
+
+            <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:imageUrl="@{item.imageURL}"
+                    android:scaleType="centerCrop" />
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+
+    <!--<com.google.android.material.card.MaterialCardView-->
+    <!--android:id="@+id/cvBanner"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:clipToPadding="true"-->
+    <!--app:cardUseCompatPadding="true"-->
+    <!--app:cardPreventCornerOverlap="false"-->
+    <!--app:cardBackgroundColor="@android:color/transparent"-->
+    <!--app:cardElevation="0dp">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/img"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/dp_675"-->
+    <!--android:scaleType="centerCrop"-->
+    <!--android:imageUrl="@{item.imageURL}"/>-->
+    <!--</com.google.android.material.card.MaterialCardView>-->
+
+</layout>

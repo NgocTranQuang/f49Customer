@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_screen"
+            android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_toolbar"
+                android:stateListAnimator="@animator/toolbar_elevated"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/tb"
+                    style="@style/CommonToolbar"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:gravity="center"
+                        android:text="@string/dich_vu_cam_do"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp_60" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_botttom_border_white"
+                            android:paddingBottom="@dimen/activity_horizontal_margin">
+
+                        <com.xxx.baseproject.imageslide.CustomRvWithIndicator
+                                android:id="@+id/imgSlide"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorWhite"
+                                app:color_selected="@color/colorPrimary"
+                                app:color_unSelected="@color/color_line_divider_light">
+
+                        </com.xxx.baseproject.imageslide.CustomRvWithIndicator>
+
+                    </LinearLayout>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/activity_horizontal_margin"
+                            android:layout_marginTop="@dimen/activity_horizontal_margin"
+                            android:text="@string/dang_ky_cam_do" />
+
+                    <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clipToPadding="false"
+                            android:padding="@dimen/activity_horizontal_margin">
+
+                        <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clipToPadding="true"
+                                android:elevation="@dimen/card_elevation"
+                                app:cardCornerRadius="@dimen/card_big_elevation"
+                                app:cardPreventCornerOverlap="true">
+
+                            <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_752"
+                                    android:orientation="vertical">
+
+                                <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_above="@+id/pageIndicatorView">
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/rvItemHome"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/color_line_divider_light"
+                                            android:nestedScrollingEnabled="false"
+                                            android:overScrollMode="never">
+
+                                    </androidx.recyclerview.widget.RecyclerView>
+
+                                    <com.facebook.shimmer.ShimmerFrameLayout
+                                            android:id="@+id/shimmer"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+
+                                        <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:orientation="horizontal"
+                                                android:weightSum="2">
+
+                                            <LinearLayout
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginEnd="@dimen/height_line_size"
+                                                    android:layout_weight="1"
+                                                    android:orientation="vertical">
+
+                                                <include layout="@layout/row_playholder_home" />
+
+
+                                                <include layout="@layout/row_playholder_home" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_weight="1"
+                                                    android:orientation="vertical">
+
+                                                <include layout="@layout/row_playholder_home" />
+
+                                                <include layout="@layout/row_playholder_home" />
+
+
+                                            </LinearLayout>
+                                        </LinearLayout>
+
+                                    </com.facebook.shimmer.ShimmerFrameLayout>
+                                </RelativeLayout>
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:background="@drawable/bg_boder_green_with_bg"
+                            android:orientation="vertical"
+                            android:paddingTop="@dimen/activity_horizontal_margin">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/ve_chung_toi" />
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                                android:gravity="center"
+                                android:text="@string/content_about_us"
+                                android:textSize="@dimen/dp_36" />
+
+                        <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_379"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_home_thanthien" />
+
+                        <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_379"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_home_nhanhchong" />
+
+                        <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_379"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_home_tincay" />
+
+                        <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/toolbar_half_padding_horizontal"
+                                app:cardCornerRadius="@dimen/card_big_elevation"
+                                app:cardElevation="0dp">
+
+                            <ImageView
+                                    android:id="@+id/imgHome"
+                                    android:scaleType="centerCrop"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_689"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_eye_unshow" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/ic_home_float_button"
+                    app:backgroundTint="#476845" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

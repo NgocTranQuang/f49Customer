@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#33952d</color>
+    <color name="colorPrimaryDark">#50b748</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="textColor">#3a3a3a</color>
+    <color name="color_end_bg_action_button">#f2ab00</color>
+    <color name="color_start_bg_action_button">#ff6d00</color>
+
+    <color name="color_end_bg_toolbar">#50b748</color>
+    <color name="color_start_bg_toolbar">#33952d</color>
+    <color name="bg_tab_layout">#f7f7f7</color>
+    <color name="tab_unselected">#8a8a8a</color>
+    <color name="tab_selected">@color/textColor</color>
+    <color name="bg_screen">#ebebeb</color>
+    <color name="bg_play_holder">#c8c8c8</color>
+    <color name="color_orange">#ff6d00</color>
+    <color name="color_green_nhat">#dff2de</color>
+    <color name="bg_line">#bfbfbf</color>
+    <color name="text_color_price">#80474747</color>
+
 </resources>

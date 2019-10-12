@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_toolbar"
+                android:stateListAnimator="@animator/toolbar_elevated"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/tb"
+                    style="@style/CommonToolbar"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/lnBottom"
+                    android:clipToPadding="false"
+                    android:padding="@dimen/activity_horizontal_margin">
+
+                <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/card_elevation"
+                        app:cardCornerRadius="@dimen/card_big_elevation">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:gravity="center"
+                                android:text="@string/so_tien_co_the_vay"
+                                android:textColor="@color/color_orange"
+                                android:textSize="@dimen/dp_85" />
+
+
+                        <LinearLayout
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="horizontal">
+
+                            <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/dp_320"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:layout_marginTop="@dimen/dp_43"
+                                        android:background="@drawable/bg_corner_green_nhat"
+                                        android:fontFamily="@font/open_sans"
+                                        android:gravity="center"
+                                        android:text="@string/tai_san_van_dc_sd" />
+
+                                <ImageView
+                                        android:layout_width="@dimen/dp_87"
+                                        android:layout_height="@dimen/dp_87"
+                                        android:src="@drawable/ic_tick_active" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/toolbar_half_padding_horizontal"
+                                    android:layout_weight="1">
+
+                                <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/dp_320"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:layout_marginTop="@dimen/dp_43"
+                                        android:background="@drawable/bg_corner_green_nhat"
+                                        android:fontFamily="@font/open_sans"
+                                        android:gravity="center"
+                                        android:text="@string/ko_can_cm_thunhap" />
+
+                                <ImageView
+                                        android:layout_width="@dimen/dp_87"
+                                        android:layout_height="@dimen/dp_87"
+                                        android:src="@drawable/ic_tick_active" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/toolbar_half_padding_horizontal"
+                                    android:layout_weight="1">
+
+                                <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/dp_320"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:layout_marginTop="@dimen/dp_43"
+                                        android:background="@drawable/bg_corner_green_nhat"
+                                        android:fontFamily="@font/open_sans"
+                                        android:gravity="center"
+                                        android:text="@string/phuc_vu_tan_nha" />
+
+                                <ImageView
+                                        android:layout_width="@dimen/dp_87"
+                                        android:layout_height="@dimen/dp_87"
+                                        android:src="@drawable/ic_tick_active" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="@string/dk_ngay_tai_f49"
+                                android:textAllCaps="true"
+                                android:textSize="@dimen/dp_36" />
+
+                        <TextView
+                                style="@style/CommonTextView.CommonTitle"
+                                android:text="@string/ho_va_ten" />
+
+                        <EditText
+                                style="@style/CommonTextView.CommonEditText"
+                                android:hint="@string/nhap_ho_va_ten" />
+
+                        <TextView
+                                style="@style/CommonTextView.CommonTitle"
+                                android:text="@string/so_dien_thoai" />
+
+                        <EditText
+                                style="@style/CommonTextView.CommonEditText"
+                                android:hint="@string/nhap_so_dt" />
+
+                        <TextView
+                                style="@style/CommonTextView.CommonTitle"
+                                android:text="@string/tai_san_muon_cam" />
+
+
+                        <EditText
+                                style="@style/CommonTextView.CommonEditText"
+                                android:hint="@string/nhap_ten_tai_san_muon_cam" />
+
+                        <TextView
+                                style="@style/CommonTextView.CommonTitle"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/dk_goi_vay"
+                                android:textColor="@color/color_orange"
+                                android:textSize="@dimen/dp_36" />
+
+                        <TextView
+                                style="@style/CommonTextView.CommonTitle"
+                                android:fontFamily="@font/open_sans"
+                                android:text="@string/la_chu_so_huu"
+                                android:textSize="@dimen/dp_36" />
+
+                        <!--<TextView-->
+                        <!--style="@style/CommonTextView.CommonTitle"-->
+                        <!--android:fontFamily="@font/open_sans"-->
+                        <!--android:text="@string/dk_goi_vay"-->
+                        <!--android:textColor="@color/color_orange"-->
+                        <!--android:textSize="@dimen/dp_36" />-->
+
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </ScrollView>
+
+            <LinearLayout
+                    android:id="@+id/lnBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_173"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/bg_border_gray_only_top"
+                    android:clipToPadding="false"
+                    android:gravity="center"
+                    android:padding="@dimen/toolbar_half_padding_horizontal">
+
+                <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/dp_468"
+                        android:layout_height="match_parent"
+                        android:foreground="?selectableItemBackground"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="@dimen/card_big_elevation"
+                        app:cardElevation="@dimen/card_elevation">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/activity_horizontal_margin"
+                            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:text="@string/xac_nhan"
+                            android:textColor="@color/colorWhite" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>
