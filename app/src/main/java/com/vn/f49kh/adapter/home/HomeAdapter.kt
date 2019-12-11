@@ -5,8 +5,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.vn.f49kh.R
+import com.vn.f49kh.activity.dangkycamdo.DangKyCamDoActivity
 import com.vn.f49kh.databinding.RowItemDashboardBinding
 import com.vn.f49kh.model.home.ItemHomeDTO
+import extension.setOnSingleClickListener
 
 class HomeAdapter(var items: MutableList<ItemHomeDTO>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     var heightItem = 1
@@ -41,6 +43,9 @@ class HomeAdapter(var items: MutableList<ItemHomeDTO>) : RecyclerView.Adapter<Ho
             var item = items.getOrNull(position)
             binding.item = item
             binding.executePendingBindings()
+            itemView.setOnSingleClickListener {
+                DangKyCamDoActivity.start(itemView.context, item?.id)
+            }
         }
 
     }

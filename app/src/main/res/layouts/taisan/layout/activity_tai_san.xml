@@ -4,8 +4,8 @@
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:background="@color/bg_screen"
             android:layout_height="match_parent"
+            android:background="@color/bg_screen"
             android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -23,13 +23,53 @@
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvTaiSan"
-                style="@style/CommonRecylerview"
-                android:nestedScrollingEnabled="false"
+        <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-        </androidx.recyclerview.widget.RecyclerView>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTaiSan"
+                    style="@style/CommonRecylerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <!--<com.facebook.shimmer.ShimmerFrameLayout-->
+                    <!--android:id="@+id/shimmer"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--app:shimmer_auto_start="true">-->
+
+                <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:orientation="vertical">-->
+
+                    <!--<include layout="@layout/row_item_playholder" />-->
+
+                    <!--<include layout="@layout/row_item_playholder" />-->
+
+                    <!--<include layout="@layout/row_item_playholder" />-->
+
+                    <!--<include layout="@layout/row_item_playholder" />-->
+
+                    <!--<include layout="@layout/row_item_playholder" />-->
+
+                    <!--<include layout="@layout/row_item_playholder" />-->
+
+                    <!--<include layout="@layout/row_item_playholder" />-->
+
+                <!--</LinearLayout>-->
+            <!--</com.facebook.shimmer.ShimmerFrameLayout>-->
+
+            <TextView
+                    android:id="@+id/tvNoData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Không có dữ liệu."
+                    android:visibility="gone" />
+        </RelativeLayout>
     </LinearLayout>
 </layout>

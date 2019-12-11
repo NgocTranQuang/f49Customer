@@ -52,7 +52,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/activity_horizontal_margin"
-                            android:text="@string/so_cmnd" />
+                            android:text="@string/so_dien_thoai" />
 
                     <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
@@ -72,10 +72,10 @@
                                 android:drawableStart="@drawable/ic_login_cmnd"
                                 android:drawablePadding="@dimen/toolbar_half_padding_horizontal"
                                 android:fontFamily="@font/open_sans"
-                                android:hint="@string/nhapso_CMND"
+                                android:hint="@string/nhap_so_dt"
+                                android:inputType="number"
                                 android:imeOptions="actionDone"
-                                android:paddingStart="@dimen/toolbar_half_padding_horizontal"
-                                android:text="0977039049" />
+                                android:paddingStart="@dimen/toolbar_half_padding_horizontal" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
@@ -106,7 +106,6 @@
                                 android:fontFamily="@font/open_sans"
                                 android:hint="@string/input_matkhau"
                                 android:imeOptions="actionDone"
-                                android:text="9049"
                                 android:inputType="textPassword"
                                 android:paddingStart="@dimen/toolbar_half_padding_horizontal" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -141,6 +140,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="@dimen/activity_horizontal_margin"
                             android:fontFamily="@font/open_sans"
+                            android:visibility="gone"
                             android:text="@string/quen_mat_khau"
                             android:textColor="#329fef"
                             android:textSize="@dimen/dp_36" />
@@ -149,6 +149,7 @@
                             android:id="@+id/cbRemember"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:visibility="gone"
                             android:layout_gravity="center"
                             android:layout_marginStart="@dimen/card_elevation"
                             android:layout_marginTop="@dimen/toolbar_half_padding_horizontal"

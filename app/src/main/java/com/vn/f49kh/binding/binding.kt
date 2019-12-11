@@ -7,12 +7,16 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.vn.f49kh.R
 import com.vn.f49kh.extension.toPrice
+import com.vn.f49kh.extension.toShow
+import java.util.*
 
 @BindingAdapter("android:imageUrl")
 fun ImageView.binImageUrl(url: String?) {
-    url?.let {
+    if (url == null) {
+        setImageResource(R.drawable.ic_image_error)
+    } else {
         val options = RequestOptions()
-            .error(R.drawable.ic_eye_show)
+            .error(R.drawable.ic_image_error)
         Glide.with(this).load(url).apply(options).into(this)
     }
 }
@@ -22,6 +26,16 @@ fun ImageView.binImageInt(drawable: Int?) {
     drawable?.let {
         setImageResource(drawable)
     }
+}
+
+@BindingAdapter("android:date")
+fun TextView.bindDate(date: Date?) {
+    if (date != null) {
+        text = date.toShow()
+    } else {
+        text = ""
+    }
+
 }
 
 @BindingAdapter("android:money")

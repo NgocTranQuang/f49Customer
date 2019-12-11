@@ -28,9 +28,9 @@
 
 
             <ScrollView
+                    style="@style/CommonScrollView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    style="@style/CommonScrollView"
                     android:layout_above="@+id/lnBottom"
                     android:clipToPadding="false"
                     android:padding="@dimen/activity_horizontal_margin">
@@ -70,6 +70,7 @@
                                 android:text="@string/ho_va_ten" />
 
                         <EditText
+                                android:id="@+id/edtFullName"
                                 style="@style/CommonTextView.CommonEditText"
                                 android:hint="@string/nhap_ho_va_ten" />
 
@@ -77,16 +78,28 @@
                                 style="@style/CommonTextView.CommonTitle"
                                 android:text="@string/chon_tinh_thanh_pho" />
 
-                        <androidx.appcompat.widget.AppCompatSpinner
-                                style="@style/CommonTextView.CommonEditText"
-                                android:layout_height="@dimen/dp_160"
-                                android:hint="@string/chon_tinh_thanh_pho" />
+                        <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
+
+                            <Spinner
+                                    android:id="@+id/spProvince"
+                                    style="@style/SpinnerStore"
+                                    android:hint="@string/chon_tinh_thanh_pho">
+
+                            </Spinner>
+
+                            <ImageView style="@style/ImageSpinner" />
+                        </RelativeLayout>
 
                         <TextView
                                 style="@style/CommonTextView.CommonTitle"
                                 android:text="@string/so_dien_thoai" />
 
                         <EditText
+                                android:id="@+id/edtPhoneNumber"
+                                android:inputType="number"
                                 style="@style/CommonTextView.CommonEditText"
                                 android:hint="@string/nhap_so_dt" />
 
@@ -95,6 +108,7 @@
                                 android:text="@string/email" />
 
                         <EditText
+                                android:id="@+id/edtEmail"
                                 style="@style/CommonTextView.CommonEditText"
                                 android:hint="@string/example_email" />
 
@@ -103,9 +117,10 @@
                                 android:text="@string/noi_dung" />
 
                         <EditText
+                                android:id="@+id/edtContent"
                                 style="@style/CommonTextView.CommonEditText"
-                                android:hint="@string/noi_dung"
                                 android:gravity=""
+                                android:hint="@string/noi_dung"
                                 android:minHeight="@dimen/dp_320" />
 
 

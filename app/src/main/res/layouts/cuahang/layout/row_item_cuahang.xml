@@ -37,7 +37,6 @@
                 <ImageView
                         android:layout_width="@dimen/dp_404"
                         android:layout_height="@dimen/dp_313"
-                        android:background="@color/colorRed"
                         android:imageUrl="@{data.imageURL}"
                         android:layout_gravity="center"
                         android:scaleType="centerCrop"

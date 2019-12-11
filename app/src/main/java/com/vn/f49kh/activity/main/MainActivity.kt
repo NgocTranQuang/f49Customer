@@ -6,17 +6,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import android.view.WindowManager
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.google.android.material.tabs.TabLayout
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.vn.custom.activity.base.BaseActivity
 import com.vn.custom.util.GeneralUtil
 import com.vn.f49kh.R
 import com.vn.f49kh.activity.login.LoginActivity
-import com.vn.f49kh.databinding.TabMainViewBinding
-import com.vn.f49kh.databinding.TabQrCodeBinding
 import com.vn.f49kh.fragment.Home.HomeFragment
 import com.vn.f49kh.fragment.dashboard.other.OtherFragment
 import com.vn.f49kh.fragment.dashboard.service.ServiceFragment
@@ -25,7 +21,7 @@ import com.xxx.baseproject.base.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
+class MainActivity : BaseActivity() {
 
 
     companion object {
@@ -34,100 +30,56 @@ class MainActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
         }
     }
 
-    private val TAB_HOME_POSITION = 0
-    private val TAB_SERVICE_POSITION = 1
-    private val TAB_SCAN_QRCODE_POSITION = 2
-    private val TAB_OTHER_POSITION = 3
-    private val TAB_USER_POSITION = 4
+    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.tab_home -> {
+                displayFragment(HomeFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.tab_service -> {
+                displayFragment(ServiceFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.tab_qrcode -> {
+
+                return@OnNavigationItemSelectedListener false
+            }
+
+            R.id.tab_other -> {
+                displayFragment(OtherFragment())
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.tab_me -> {
+                if (GeneralUtil.isLogined(this)) {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    return@OnNavigationItemSelectedListener false
+
+                } else {
+                    displayFragment(ProfileUserFragment())
+                    return@OnNavigationItemSelectedListener true
+                }
+
+            }
+        }
+        false
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initTab()
         displayFragment(HomeFragment())
-//        setStatusBarGradiant(this)
+
     }
 
     private fun initTab() {
-        tab_layout.addTab(
-            tab_layout.newTab()
-                .setCustomView(getTabMain(R.drawable.tab_home_selected, R.string.title_home)), TAB_HOME_POSITION
-        )
-        tab_layout.addTab(
-            tab_layout.newTab()
-                .setCustomView(getTabMain(R.drawable.tab_service_selected, R.string.service)), TAB_SERVICE_POSITION
-        )
-        tab_layout.addTab(
-            tab_layout.newTab()
-                .setCustomView(getTabSwitchSiteView()), TAB_SCAN_QRCODE_POSITION
-        )
-        tab_layout.addTab(
-            tab_layout.newTab()
-                .setCustomView(getTabMain(R.drawable.tab_other_selected, R.string.other)),
-            TAB_OTHER_POSITION
-        )
-        tab_layout.addTab(
-            tab_layout.newTab()
-                .setCustomView(getTabMain(R.drawable.tab_me_selected, R.string.toi)), TAB_USER_POSITION
-        )
-        tab_layout.addOnTabSelectedListener(this)
+
+        nav_view?.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        nav_view?.showBadgeQRCode(1, 1)
+
     }
 
-    private fun getTabSwitchSiteView(): View {
-
-        var mTabSwitchSiteViewBinding = DataBindingUtil.inflate<TabQrCodeBinding>(
-            layoutInflater, R.layout.tab_qr_code,
-            tab_layout, false
-        )
-        mTabSwitchSiteViewBinding.imgBgWorkSite.setOnClickListener({ v ->
-            //            if (mWorkSiteList != null && mWorkSiteList.size > 0) {
-//                mCompanyListDialog.show()
-//            }
-        })
-
-        return mTabSwitchSiteViewBinding.getRoot()
-    }
-
-    private fun getTabMain(iconId: Int, titleStrId: Int): View {
-        var mTabMainViewBinding = DataBindingUtil.inflate<TabMainViewBinding>(
-            layoutInflater, R.layout.tab_main_view!!,
-            tab_layout!!, false
-        )
-        mTabMainViewBinding.imgIcon.setImageDrawable(getDrawable(iconId))
-        mTabMainViewBinding.tvTitle.setText(titleStrId)
-        mTabMainViewBinding.tvTitle.setAllCaps(true)
-        return mTabMainViewBinding.getRoot()
-    }
-
-    override fun onTabReselected(p0: TabLayout.Tab?) {
-    }
-
-    override fun onTabUnselected(p0: TabLayout.Tab?) {
-    }
-
-    override fun onTabSelected(p0: TabLayout.Tab?) {
-        when (p0?.position) {
-            TAB_HOME_POSITION -> {
-                displayFragment(HomeFragment())
-            }
-            TAB_SERVICE_POSITION -> {
-                displayFragment(ServiceFragment())
-            }
-            TAB_SCAN_QRCODE_POSITION -> {
-
-            }
-            TAB_OTHER_POSITION -> {
-                displayFragment(OtherFragment())
-            }
-            TAB_USER_POSITION -> {
-                if (GeneralUtil.isLogined(this)) {
-                    startActivity(Intent(this, LoginActivity::class.java))
-                } else {
-                    displayFragment(ProfileUserFragment())
-                }
-            }
-        }
-    }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     fun setStatusBarGradiant(activity: Activity) {
@@ -141,13 +93,7 @@ class MainActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
         }
     }
 
-    fun checkLogin(todo: () -> Unit) {
-        if (GeneralUtil.isLogined(this)) {
-            startActivity(Intent(this, LoginActivity::class.java))
-        } else {
-            todo.invoke()
-        }
-    }
+
 
     private fun displayFragment(frag: BaseFragment) {
         try {
@@ -191,6 +137,10 @@ class MainActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
             transaction.addToBackStack(tag)
             transaction.commitAllowingStateLoss()
         }
+    }
+
+    fun selectTab(i: Int) {
+        nav_view.selectedItemId = R.id.tab_home
     }
 
 }

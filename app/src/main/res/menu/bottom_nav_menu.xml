@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+            android:id="@+id/tab_home"
+            android:icon="@drawable/tab_home_selected"
+            android:title="@string/title_home"
+            app:showAsAction="always" />
+
+    <item
+            android:id="@+id/tab_service"
+            android:icon="@drawable/tab_service_selected"
+            android:title="@string/service"
+            app:showAsAction="always" />
+
+
+    <item
+            android:id="@+id/tab_qrcode"
+            android:title=""
+            app:showAsAction="always" />
+    <item
+            android:id="@+id/tab_other"
+            android:icon="@drawable/tab_other_selected"
+            android:title="@string/other"
+            app:showAsAction="always" />
+    <item
+            android:id="@+id/tab_me"
+            android:icon="@drawable/tab_me_selected"
+            android:title="@string/toi"
+            app:showAsAction="always" />
+
+</menu>

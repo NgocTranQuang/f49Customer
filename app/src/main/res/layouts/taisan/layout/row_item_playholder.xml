@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/toolbar_half_padding_horizontal"
+            android:background="@color/bg_play_holder"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="@dimen/card_big_elevation"
+            app:cardElevation="@dimen/height_line_size">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_410"
+                android:background="@color/bg_play_holder"
+                android:orientation="horizontal">
+
+            <!--<com.google.android.material.card.MaterialCardView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@color/bg_play_holder"-->
+                    <!--android:layout_margin="@dimen/dp_10"-->
+                    <!--app:cardCornerRadius="@dimen/card_big_elevation"-->
+                    <!--app:cardElevation="0dp">-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="@dimen/dp_395"-->
+                        <!--android:visibility="invisible"-->
+                        <!--android:background="@color/bg_play_holder"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:scaleType="centerCrop" />-->
+            <!--</com.google.android.material.card.MaterialCardView>-->
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/toolbar_half_padding_horizontal">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_bold"
+                            />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/open_sans"
+                            android:textColor="@color/text_color_price"
+                            android:textSize="@dimen/dp_36" />
+
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:textColor="@color/color_orange" />
+                </RelativeLayout>
+
+                <ImageView
+                        android:layout_width="@dimen/dp_87"
+                        android:layout_height="@dimen/dp_87"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        />
+            </RelativeLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

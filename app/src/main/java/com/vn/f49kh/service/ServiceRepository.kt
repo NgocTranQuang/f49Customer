@@ -23,8 +23,8 @@ class ServiceRepository {
         const val HEADER_TOKEN = "Authorization"
         //        private var BASE_URL = "http://apif49.itpsolution.net/"
 //        private var BASE_URL = "http://api.f49.vn/"
-        private const val CONNECT_TIMEOUT: Long = 20000
-        private const val READ_TIMEOUT: Long = 20000
+        private const val CONNECT_TIMEOUT: Long = 60000
+        private const val READ_TIMEOUT: Long = 60000
         private var retrofit: Retrofit? = null
 
 //        private var builder: Retrofit.Builder = Retrofit.Builder().baseUrl(BASE_URL)

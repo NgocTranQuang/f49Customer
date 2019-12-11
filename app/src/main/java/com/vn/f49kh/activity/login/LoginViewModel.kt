@@ -8,7 +8,7 @@ import com.vn.custom.util.Constant
 import com.vn.custom.util.PreferenceUtils
 import com.vn.f49kh.R
 import com.vn.f49kh.activity.BaseF49ViewModel
-import com.xxx.baseproject.base.Base
+import com.vn.f49kh.base.Base
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import retrofit2.HttpException
@@ -60,6 +60,7 @@ class LoginViewModel(app: Application) : BaseF49ViewModel(app) {
                     PreferenceUtils.writeString(mContext, PreferenceUtils.KEY_PASSWORD, password)
                     PreferenceUtils.writeBoolean(mContext, PreferenceUtils.KEY_IS_LOGOUT, false)
                     Base.pageSize = it.pageSize.toInt()
+                    Base.username = it
                     isLoginSuccessfully.value = true
                 } else {
                     isLoginSuccessfully.value = false

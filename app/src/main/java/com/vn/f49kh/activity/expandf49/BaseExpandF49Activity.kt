@@ -1,8 +1,9 @@
 package com.vn.f49kh.activity.expandf49
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.ViewCompat
+import androidx.lifecycle.Observer
 import com.vn.f49kh.R
 import com.vn.f49kh.activity.taisan.TaiSanViewModel
 import com.vn.f49kh.adapter.taisan.TaiSanTypeAdapter
@@ -10,14 +11,12 @@ import com.vn.f49kh.databinding.ActivityTaiSanBinding
 import com.vn.f49kh.extension.init
 import com.vn.f49kh.model.taisan.TaiSanDTO
 import com.vn.f49kh.model.taisan.TaiSanTypeDTO
-import com.vn.f49kh.utils.Constant
 import com.xxx.baseproject.base.BaseMVVMActivity
 import kotlinx.android.synthetic.main.activity_tai_san.*
-import java.util.*
 
 
 open class BaseExpandF49Activity : BaseMVVMActivity<ActivityTaiSanBinding, TaiSanViewModel>() {
-
+    var adapter: TaiSanTypeAdapter? = null
     override fun getLayout(): Int {
         return R.layout.activity_tai_san
     }
@@ -37,20 +36,30 @@ open class BaseExpandF49Activity : BaseMVVMActivity<ActivityTaiSanBinding, TaiSa
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         rvTaiSan.init()
-        rvTaiSan.adapter = TaiSanTypeAdapter(getListItem(), {
+        adapter = TaiSanTypeAdapter(mutableListOf(), {
             it?.let {
                 onclickViewAll(it)
             }
-        }) {
+        }, {
             it?.let {
                 onclickItem(it)
             }
-        }
-        ViewCompat.setNestedScrollingEnabled(rvTaiSan, false);
-        rvTaiSan.setNestedScrollingEnabled(false);
+        }, showArrowNext())
+        rvTaiSan.adapter = adapter
         rvTaiSan.post {
             rvTaiSan.scrollToPosition(0)
         }
+    }
+
+    open fun showArrowNext(): Boolean {
+        return true
+    }
+
+    override fun observer() {
+        super.observer()
+        mViewModel?.listTaiSan?.observe(this, Observer {
+            setListData(it)
+        })
     }
 
     open fun onclickViewAll(taiSanTypeDTO: TaiSanTypeDTO) {
@@ -61,76 +70,24 @@ open class BaseExpandF49Activity : BaseMVVMActivity<ActivityTaiSanBinding, TaiSa
 
     }
 
-    open fun getListItem(): MutableList<TaiSanTypeDTO> {
-        var list = mutableListOf<TaiSanTypeDTO>()
-        list.add(TaiSanTypeDTO().apply {
-            this.name = "Lap top"
-            var taiSan = TaiSanDTO().apply {
-                this.name = "lap top doi moi gia re"
-                this.imageURL = Constant.IMAGE_URL_DEFAULT
-                this.ngayDenHan = Date()
-                this.noLaiDenHan = 2000000
-                this.price = 12000000
+//    override fun showLoading() {
+//        shimmer.visibility = View.VISIBLE
+//    }
+//
+//    override fun hideLoading() {
+//        shimmer.visibility = View.GONE
+//    }
+
+    open fun setListData(data: MutableList<TaiSanTypeDTO>?) {
+        if (data == null || data.size == 0) {
+            tvNoData.visibility = View.VISIBLE
+        } else {
+            tvNoData.visibility = View.GONE
+            adapter?.insertData(data)
+            rvTaiSan.post {
+                rvTaiSan.scrollToPosition(0)
             }
-            var lisTS = mutableListOf<TaiSanDTO>()
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            this.listTaiSan = lisTS
-        })
-        list.add(TaiSanTypeDTO().apply {
-            this.name = "Lap top"
-            var taiSan = TaiSanDTO().apply {
-                this.name = "lap top doi moi gia re"
-                this.imageURL = Constant.IMAGE_URL_DEFAULT
-                this.ngayDenHan = Date()
-                this.noLaiDenHan = 2000000
-                this.price = 12000000
-            }
-            var lisTS = mutableListOf<TaiSanDTO>()
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            this.listTaiSan = lisTS
-        })
-        list.add(TaiSanTypeDTO().apply {
-            this.name = "Lap top"
-            var taiSan = TaiSanDTO().apply {
-                this.name = "lap top doi moi gia re"
-                this.imageURL = Constant.IMAGE_URL_DEFAULT
-                this.ngayDenHan = Date()
-                this.noLaiDenHan = 2000000
-                this.price = 12000000
-            }
-            var lisTS = mutableListOf<TaiSanDTO>()
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            this.listTaiSan = lisTS
-        })
-        list.add(TaiSanTypeDTO().apply {
-            this.name = "Lap top"
-            var taiSan = TaiSanDTO().apply {
-                this.name = "lap top doi moi gia re"
-                this.ngayDenHan = Date()
-                this.imageURL = Constant.IMAGE_URL_DEFAULT
-                this.noLaiDenHan = 2000000
-                this.price = 12000000
-            }
-            var lisTS = mutableListOf<TaiSanDTO>()
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            lisTS.add(taiSan)
-            this.listTaiSan = lisTS
-        })
-        return list
+        }
     }
+
 }

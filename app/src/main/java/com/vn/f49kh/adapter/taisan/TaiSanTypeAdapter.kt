@@ -14,7 +14,8 @@ import com.vn.f49kh.model.taisan.TaiSanTypeDTO
 class TaiSanTypeAdapter(
     var items: MutableList<TaiSanTypeDTO>,
     var clickItem: (TaiSanTypeDTO?) -> Unit,
-    var clickItemChild: (TaiSanDTO?) -> Unit
+    var clickItemChild: (TaiSanDTO?) -> Unit,
+    var showArrowNext : Boolean
 ) :
     RecyclerView.Adapter<TaiSanTypeAdapter.ViewHolder>() {
     var heightItem = 1
@@ -41,10 +42,9 @@ class TaiSanTypeAdapter(
         fun bind(position: Int) {
             var item = items.getOrNull(position)
             item?.let {
-                binding.tvTitle.text = item.name
+                binding.tvTitle.text = item.trangThai
                 binding.rvTaiSan.init(space = R.dimen.toolbar_half_padding_horizontal)
-                binding.rvTaiSan.adapter = TaiSanAdapter(it.listTaiSan ?: mutableListOf(), clickItemChild)
-                binding.rvTaiSan.setNestedScrollingEnabled(false);
+                binding.rvTaiSan.adapter = TaiSanAdapter(it.listTaiSan ?: mutableListOf(), clickItemChild,showArrowNext)
                 binding.executePendingBindings()
             }
         }

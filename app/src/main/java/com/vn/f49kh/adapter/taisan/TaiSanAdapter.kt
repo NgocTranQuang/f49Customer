@@ -1,6 +1,7 @@
 package com.vn.f49kh.adapter.taisan
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +13,8 @@ import extension.setOnSingleClickListener
 
 class TaiSanAdapter(
     var items: MutableList<TaiSanDTO>,
-    var clickItem: (TaiSanDTO?) -> Unit
+    var clickItem: (TaiSanDTO?) -> Unit,
+    var showArrowNext : Boolean
 ) :
     RecyclerView.Adapter<TaiSanAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -37,6 +39,11 @@ class TaiSanAdapter(
     inner class ViewHolder(val binding: RowItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
             var item = items.getOrNull(position)
+            if(showArrowNext){
+                binding.imgNext.visibility = View.VISIBLE
+            }else{
+                binding.imgNext.visibility = View.GONE
+            }
             item?.let {
                 binding.data = it
                 binding.executePendingBindings()

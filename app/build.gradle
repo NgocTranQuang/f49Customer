@@ -23,7 +23,7 @@ android {
         minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "1.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
@@ -37,6 +37,7 @@ android {
         debug {
             minifyEnabled false
             buildConfigField "String", "BASE_URL", '"http://f49.itpsolution.net/"'
+//            buildConfigField "String", "BASE_URL", '"http://f49web.lan/api/"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -50,7 +51,7 @@ android {
 
     sourceSets {
         main {
-            res.srcDirs = ['src/main/res', 'src/main/res/layouts/login', 'src/main/res/layouts/main', 'src/main/res/layouts/home', 'src/main/res/layouts/slideimage', 'src/main/res/layouts/service', 'src/main/res/layouts/profile', 'src/main/res/layouts/dinhgiataisan', 'src/main/res/layouts/camdo', 'src/main/res/camdogiadung', 'src/main/res/layouts/camdogiadung', 'src/main/res/layouts/taisan', 'src/main/res/layouts/cuahang', 'src/main/res/layouts/chitiet', 'src/main/res/layouts/lienhe', 'src/main/res/layouts/huongdan', 'src/main/res/layouts/baoquan']
+            res.srcDirs = ['src/main/res', 'src/main/res/layouts/login', 'src/main/res/layouts/main', 'src/main/res/layouts/home', 'src/main/res/layouts/slideimage', 'src/main/res/layouts/service', 'src/main/res/layouts/profile', 'src/main/res/layouts/dinhgiataisan', 'src/main/res/layouts/camdo', 'src/main/res/camdogiadung', 'src/main/res/layouts/camdogiadung', 'src/main/res/layouts/taisan', 'src/main/res/layouts/cuahang', 'src/main/res/layouts/chitiet', 'src/main/res/layouts/lienhe', 'src/main/res/layouts/huongdan', 'src/main/res/layouts/baoquan', 'src/main/res/layouts/customview']
         }
     }
 }

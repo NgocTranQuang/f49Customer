@@ -6,7 +6,6 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
-import android.os.Handler
 import android.provider.Settings
 import android.text.TextUtils
 import android.util.DisplayMetrics
@@ -14,12 +13,14 @@ import android.util.Patterns
 import android.view.Gravity
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import java.io.UnsupportedEncodingException
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
+import java.util.regex.Pattern
 import kotlin.experimental.and
 
 
@@ -81,7 +82,6 @@ object GeneralUtils {
         val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(v.windowToken, 0)
     }
-
 
 
     fun getDeviceName(): String {
@@ -254,6 +254,25 @@ object GeneralUtils {
         } catch (t: Throwable) {
         }
 
+    }
+
+    fun isPhoneNumberFormat(edt: EditText): Boolean {
+        var number = edt.text.toString()
+        if(number.length !=10){
+            return false
+        }else{
+            if (number.get(0).toString()!="0"){
+                return false
+            }
+        }
+        return true
+    }
+
+    fun isMailAddress(email: String): Boolean {
+        val expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$"
+        val pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE)
+        val matcher = pattern.matcher(email)
+        return matcher.matches()
     }
 
 }

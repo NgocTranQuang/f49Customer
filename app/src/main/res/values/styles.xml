@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorPrimary</item>
         <item name="android:textViewStyle">@style/TextViewStyle</item>
         <item name="android:statusBarColor">@color/color_start_bg_toolbar</item>
     </style>
@@ -18,6 +18,13 @@
 
     <style name="TabTitleTextStyle" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">@dimen/dp_30</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_loading</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="CommonTextView">
@@ -157,6 +164,26 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1px</item>
         <item name="android:background">@color/color_line_divider_light</item>
+    </style>
+
+    <style name="SpinnerStore">
+        <item name="android:background">@drawable/bg_boder_gray</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingStart">@dimen/toolbar_half_padding_horizontal</item>
+        <item name="android:layout_height">@dimen/dp_160</item>
+
+    </style>
+
+    <style name="ImageSpinner">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:src">@drawable/ic_arrow_down</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_marginEnd">@dimen/activity_horizontal_margin</item>
+
+
     </style>
 
 </resources>

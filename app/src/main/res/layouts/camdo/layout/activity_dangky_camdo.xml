@@ -27,10 +27,10 @@
                 android:layout_height="match_parent">
 
 
-            <ScrollView
+            <androidx.core.widget.NestedScrollView
+                    style="@style/CommonScrollView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    style="@style/CommonScrollView"
                     android:layout_above="@+id/lnBottom"
                     android:clipToPadding="false"
                     android:padding="@dimen/activity_horizontal_margin">
@@ -70,14 +70,17 @@
                                 android:text="@string/ban_muon_cam_bao_nhieu" />
 
                         <EditText
+                                android:id="@+id/edtBalance"
                                 style="@style/CommonTextView.CommonEditText"
-                                android:hint="@string/nhap_so_tien" />
+                                android:hint="@string/nhap_so_tien"
+                                android:inputType="number" />
 
                         <TextView
                                 style="@style/CommonTextView.CommonTitle"
                                 android:text="@string/ho_va_ten" />
 
                         <EditText
+                                android:id="@+id/edtFullName"
                                 style="@style/CommonTextView.CommonEditText"
                                 android:hint="@string/nhap_ho_va_ten" />
 
@@ -85,27 +88,55 @@
                                 style="@style/CommonTextView.CommonTitle"
                                 android:text="@string/tai_san_the_chap" />
 
-                        <androidx.appcompat.widget.AppCompatSpinner
-                                style="@style/CommonTextView.CommonEditText"
-                                android:layout_height="@dimen/dp_160"
-                                android:hint="@string/nhap_ho_va_ten" />
+                        <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
+
+                            <Spinner
+                                    android:id="@+id/spTaiSan"
+                                    style="@style/SpinnerStore">
+
+                            </Spinner>
+
+                            <ImageView style="@style/ImageSpinner" />
+
+                            <ProgressBar
+                                    android:id="@+id/progress_bar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
 
                         <TextView
                                 style="@style/CommonTextView.CommonTitle"
                                 android:text="@string/hang_thuong_hieu" />
 
-                        <EditText
+                        <AutoCompleteTextView
+                                android:id="@+id/edtBrad"
                                 style="@style/CommonTextView.CommonEditText"
-                                android:hint="@string/toyota_honde_mazda" />
+                                android:hint="@string/hang_thuong_hieu" />
+
+                        <TextView
+                                style="@style/CommonTextView.CommonTitle"
+                                android:text="@string/so_dien_thoai" />
+
+                        <EditText
+                                android:id="@+id/edtPhoneNumber"
+                                style="@style/CommonTextView.CommonEditText"
+                                android:hint="@string/so_dien_thoai"
+                                android:inputType="number" />
 
                         <TextView
                                 style="@style/CommonTextView.CommonTitle"
                                 android:text="@string/mo_ta" />
 
                         <EditText
+                                android:id="@+id/edtDes"
                                 style="@style/CommonTextView.CommonEditText"
-                                android:hint="@string/mo_ta"
                                 android:gravity=""
+                                android:hint="@string/mo_ta"
                                 android:minHeight="@dimen/dp_320" />
 
 
@@ -113,7 +144,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
 
-            </ScrollView>
+            </androidx.core.widget.NestedScrollView>
 
             <LinearLayout
                     android:id="@+id/lnBottom"

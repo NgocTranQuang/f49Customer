@@ -28,6 +28,7 @@
 
 
             <ScrollView
+                    style="@style/CommonScrollView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_above="@+id/lnBottom"
@@ -146,6 +147,7 @@
                                 android:text="@string/ho_va_ten" />
 
                         <EditText
+                                android:id="@+id/edtFullName"
                                 style="@style/CommonTextView.CommonEditText"
                                 android:hint="@string/nhap_ho_va_ten" />
 
@@ -154,6 +156,8 @@
                                 android:text="@string/so_dien_thoai" />
 
                         <EditText
+                                android:id="@+id/edtPhoneNumber"
+                                android:inputType="number"
                                 style="@style/CommonTextView.CommonEditText"
                                 android:hint="@string/nhap_so_dt" />
 
@@ -163,6 +167,7 @@
 
 
                         <EditText
+                                android:id="@+id/edtTenTaiSan"
                                 style="@style/CommonTextView.CommonEditText"
                                 android:hint="@string/nhap_ten_tai_san_muon_cam" />
 

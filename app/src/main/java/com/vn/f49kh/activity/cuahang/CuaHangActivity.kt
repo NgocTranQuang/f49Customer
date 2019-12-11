@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.Observer
 import com.vn.f49kh.R
 import com.vn.f49kh.adapter.cuahang.CuahangAdapter
 import com.vn.f49kh.databinding.ActivityCuahangBinding
@@ -41,24 +42,17 @@ class CuaHangActivity : BaseMVVMActivity<ActivityCuahangBinding, CuaHangViewMode
 
     private fun initRV() {
         rvCuaHang.init()
-        adapter = CuahangAdapter(getlistCuahang()) {
+        adapter = CuahangAdapter(mutableListOf()) {
 
         }
         rvCuaHang.adapter = adapter
     }
 
-    fun getlistCuahang(): MutableList<CuaHangDTO> {
-        var list = mutableListOf<CuaHangDTO>()
-        list.add(CuaHangDTO().apply {
-            imageURL = "http://f49.vn/media/Images/index/img/img-gioithieu.jpg"
-            name = "Cua hang f49"
-            openTime = " 6:00 AM - 18:00 PM"
-            phoneNUmber = "0978736152"
-            address = "1A NGuyen Duc Thuan, Tan Binh, tphcm"
+    override fun observer() {
+        super.observer()
+        mViewModel?.getDanhSachCuaHang()
+        mViewModel?.listCuaHang?.observe(this, Observer {
+            adapter?.insertData(it)
         })
-        list.addAll(list)
-        list.addAll(list)
-        list.addAll(list)
-        return list
     }
 }

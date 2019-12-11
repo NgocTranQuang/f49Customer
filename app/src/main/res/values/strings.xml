@@ -3,7 +3,7 @@
     <string name="so_cmnd">Số chứng minh nhân dân</string>
     <string name="input_matkhau">Nhập mật khẩu</string>
     <string name="nhapso_CMND">Nhập số CMND</string>
-    <string name="mat_khau">Mat khau</string>
+    <string name="mat_khau">Mật khẩu</string>
     <string name="login">Đăng nhập</string>
     <string name="quen_mat_khau">Quên mật khẩu?</string>
     <string name="tu_dong_dap_nhap_lan_sau">Tự động đăng nhập lần sau</string>
@@ -45,7 +45,7 @@
     <string name="so_dien_thoai">Số điện thoại</string>
     <string name="nhap_so_dt">Nhập số điện thoại</string>
     <string name="thiet_lap_cam_do">Thiết lập khoản cầm đồ</string>
-    <string name="conten_camdo">Bạn vui lòng nhập đầy đủ thông tin để chúng tôi có thể hỗ trợ ban tot nhat</string>
+    <string name="conten_camdo">Bạn vui lòng nhập đầy đủ thông tin để chúng tôi có thể hỗ trợ bạn tốt nhất.</string>
     <string name="ban_muon_cam_bao_nhieu">Bạn muốn cầm bao nhiêu? (VNĐ)</string>
     <string name="nhap_so_tien">Nhập số tiền</string>
     <string name="ho_va_ten">Họ và tên</string>
@@ -63,7 +63,7 @@
     <string name="tai_san_muon_cam">Tài sản muốn cầm</string>
     <string name="nhap_ten_tai_san_muon_cam">Nhập tên tài sản muốn cầm</string>
     <string name="dk_goi_vay">* Điều kiện gói vay bằng đồ gia dụng (Cầm đồ gia dụng)</string>
-    <string name="la_chu_so_huu"><![CDATA[- Là chủ sở hữu của tài sản \n- Có sổ hộ khẩu & sở hữu nhà tại Bảo loc lam dong]]></string>
+    <string name="la_chu_so_huu"><![CDATA[- Là chủ sở hữu của tài sản \n- Có sổ hộ khẩu & sở hữu nhà tại Bảo Lộc Lâm Đồng]]></string>
     <string name="cam_do_gia_dung">Cầm đồ gia dụng</string>
     <string name="ve_chung_toi">Về chúng tôi</string>
     <string name="gia_thanh_ly">Giá thanh lý</string>
@@ -74,7 +74,7 @@
     <string name="noi_dung">Nội dung</string>
     <string name="gui">Gửi</string>
     <string name="title_huongdan">nếu bạn cần nguồn vốn kinh doanh ngắn hạn</string>
-    <string name="b_n_c_t_i_s_n_l_t_xe_m_y_b_n_ng_i_n_nh_ng_c_a_hi_u_c_m_do_vang_lai">Bạn có tài sản là ô tô, xe máy? Bạn ngại đến những cửa hiệu cầm do vang lai?</string>
+    <string name="b_n_c_t_i_s_n_l_t_xe_m_y_b_n_ng_i_n_nh_ng_c_a_hi_u_c_m_do_vang_lai">Bạn có tài sản là ô tô, xe máy? Bạn ngại đến những cửa hiệu cầm đồ vãng lai?</string>
     <string name="welcome">hãy đến với dịch vụ cho vay của F49, địa chỉ uy tín cung cấp cho bạn nguồn vốn kịp thời với tài sản đảm bảo là ô tô, xe máy, điện thoại,laptop và những tài sản có giá trị khác.</string>
     <string name="th_m_nh_gi_t_i_s_n_v_x_c_nh_n_s_ti_n_c_th_c_m">Thẩm định giá tài sản và xác nhận số tiền có thể cầm</string>
     <string name="khach_hang_mang_tai_san_toi_cua_hang_f49">Khách hàng mang tài sản tới cửa hàng F49</string>
@@ -84,7 +84,7 @@
     <string name="truy_c_p_f49_vn_t_y_u_c_u_c_m_g_i_th_ng_tin_t_i_s_n_cho_f49">Truy cập F49.vn đặt yêu cầu cầm đồ, gửi thông tin tài sản cho F49</string>
     <string name="th_m_nh_gi_t_i_s_n_v_x_c_nh_p_s_ti_n_c_th_c_m">Thẩm định giá tài sản và xác nhập số tiền có thể cầm</string>
     <string name="f49_ti_n_h_nh_k_h_p_ng_v_trao_ti_n_t_i_nh_kh_ch_h_ng">F49 tiến hành ký hợp đồng và trao tiền tại nhà khách hàng</string>
-    <string name="doi_voi_tai_san_nho">Dối với tài sản nhỏ</string>
+    <string name="doi_voi_tai_san_nho">Đối với tài sản nhỏ</string>
     <string name="ki_m_tra_v_x_c_nh_n_t_nh_tr_ng_t_i_s_n_v_i_kh_ch_h_ng">Kiểm tra và xác nhận tình trạng tài sản với khách hàng</string>
     <string name="cho_v_o_t_i_b_o_qu_n">Cho vào túi bảo quản</string>
     <string name="ni_m_phong_b_ng_tem_v_i_s_ch_ng_ki_n_c_a_kh_ch_h_ng">Niêm phong bằng tem với sự chứng kiến của khách hàng</string>
@@ -100,7 +100,7 @@
     <string name="nhap_lai_mat_khau_moi">Nhập lại mật khẩu mới</string>
     <string name="dong_y">Đồng ý</string>
     <string name="huy">Huỷ</string>
-    <string name="max_image">Chỉ được upload tối đa 10 ảnh</string>
+    <string name="max_image">Chỉ được upload tối đa 1 ảnh</string>
     <string name="lay_anh_tu_the_nho">Lấy ảnh từ bộ nhớ máy</string>
     <string name="chup_anh_tu_camera">Chụp ảnh từ camera</string>
     <string name="trang_thai">Trạng thái</string>
@@ -109,4 +109,15 @@
     <string name="no_goc_den_lai">Nợ gốc đến lãi</string>
     <string name="no_lai_den_han">Nợ lãi đến hạn</string>
     <string name="ngay_den_han">Ngày đến hạn</string>
+
+    <string name="are_you_sure_delete_this_image">Bạn chắc chắn muốn xoá ảnh này?</string>
+    <string name="chon_anh">Xin vui lòng chọn 1 ảnh.</string>
+    <string name="l_y_nh_t_b_nh">Lấy ảnh từ bộ nhớ</string>
+    <string name="ch_p_nh_t_camera">Chụp ảnh từ camera</string>
+    <string name="upload_fail">Upload ảnh lỗi. Xin vui lòng thử lại.</string>
+    <string name="upload_thanhcong">Upload ảnh thành công.</string>
+    <string name="we_will_call_for_you_later">Chúng tôi sẽ liên lạc với bạn thông qua số điện thoại sau 30 phút (Trong giờ hành chính) để hỗ trợ bạn</string>
+    <string name="change_password_ss">Thay đổi mật khẩu thành công</string>
+    <string name="da_gui_yeu_cau_lien_he">Đã gửi yêu cầu liên hệ</string>
+    <string name="invalid_data">Xin vui lòng nhập đầy đủ và đúng thông tin.</string>
 </resources>

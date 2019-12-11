@@ -7,4 +7,8 @@ class LoginDTO {
     var error_description: String? = null
     var expires_in: String? = null
     var pageSize: String = "40"
+    var idKhachHang: String? = null
+    var hoTen: String? = null
+    var dienThoai: String? = null
+
 }

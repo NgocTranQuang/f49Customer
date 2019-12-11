@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="data"
+                type="com.vn.f49kh.model.chitiet.ChiTietDongLaiDTO" />
+    </data>
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +37,8 @@
 
             <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/lnBottom">
 
 
                 <LinearLayout
@@ -55,13 +64,6 @@
 
                     </LinearLayout>
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/activity_horizontal_margin"
-                            android:layout_marginTop="@dimen/activity_horizontal_margin"
-                            android:text="Laptop doi moi gia re" />
-
                     <com.google.android.material.card.MaterialCardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -75,128 +77,19 @@
                                 android:orientation="vertical">
 
                             <TextView
+                                    android:id="@+id/tvName"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/open_sans_bold"
-                                    android:text="Laptop doi moi gia re - F554L"
-                                    android:textColor="#3a3a3a" />
+                                    android:textColor="#3a3a3a"
+                                    tools:text="Laptop doi moi gia re - F554L" />
 
-                            <RelativeLayout
+                            <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvData"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/activity_horizontal_margin">
+                                    android:layout_height="wrap_content">
 
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/open_sans"
-                                        android:text="@string/trang_thai" />
-
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_alignParentEnd="true"
-                                        android:fontFamily="@font/open_sans_bold"
-                                        android:text="Dang cam"
-                                        android:textColor="@color/color_orange" />
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
-
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/open_sans"
-                                        android:text="@string/so_hop_dong" />
-
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_alignParentEnd="true"
-                                        android:fontFamily="@font/open_sans"
-                                        android:text="Dang cam" />
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
-
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/open_sans"
-                                        android:text="@string/ngay_hieu_luc" />
-
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_alignParentEnd="true"
-                                        android:fontFamily="@font/open_sans"
-                                        android:text="28/3/2019" />
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
-
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/open_sans"
-                                        android:text="@string/no_goc_den_lai" />
-
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_alignParentEnd="true"
-                                        android:fontFamily="@font/open_sans_bold"
-                                        android:text="1300000 vnd"
-                                        android:textColor="@color/color_orange" />
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
-
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/open_sans"
-                                        android:text="@string/no_lai_den_han" />
-
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_alignParentEnd="true"
-                                        android:fontFamily="@font/open_sans_bold"
-                                        android:text="130292838 vnd"
-                                        android:textColor="@color/color_orange" />
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
-
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="@font/open_sans"
-                                        android:text="@string/ngay_den_han" />
-
-                                <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_alignParentEnd="true"
-                                        android:fontFamily="@font/open_sans"
-                                        android:text="12/3/1991" />
-                            </RelativeLayout>
+                            </androidx.recyclerview.widget.RecyclerView>
 
                         </LinearLayout>
 
@@ -208,6 +101,7 @@
             </androidx.core.widget.NestedScrollView>
 
             <LinearLayout
+                    android:id="@+id/lnBottom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -233,60 +127,20 @@
                             android:text="@string/gia_thanh_ly" />
 
                     <TextView
+                            android:id="@+id/tvPrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:fontFamily="@font/open_sans_bold"
-                            android:text="4.000.000 VND"
                             android:textColor="@color/color_orange"
-                            android:textSize="@dimen/dp_60" />
+                            android:textSize="@dimen/dp_60"
+                            tools:text="4.000.000 VND" />
                 </RelativeLayout>
             </LinearLayout>
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/bg_line" />
-
-                <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_175"
-                        android:layout_alignParentBottom="true"
-                        android:gravity="center"
-                        android:paddingStart="@dimen/activity_horizontal_margin"
-                        android:paddingEnd="@dimen/activity_horizontal_margin">
-
-                    <com.google.android.material.card.MaterialCardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:cardBackgroundColor="@color/colorPrimary"
-                            app:cardCornerRadius="@dimen/card_big_elevation">
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:drawableStart="@drawable/ic_cuahang_phonenumber"
-                                android:drawablePadding="@dimen/activity_horizontal_margin"
-                                android:fontFamily="@font/open_sans_bold"
-                                android:paddingStart="@dimen/activity_horizontal_margin"
-                                android:paddingTop="@dimen/toolbar_half_padding_horizontal"
-                                android:paddingEnd="@dimen/activity_horizontal_margin"
-                                android:paddingBottom="@dimen/toolbar_half_padding_horizontal"
-                                android:text="@string/lien_he"
-                                android:textColor="@color/colorWhite" />
-                    </com.google.android.material.card.MaterialCardView>
-
-
-                </RelativeLayout>
-            </LinearLayout>
         </RelativeLayout>
+
+
     </LinearLayout>
 
 </layout>

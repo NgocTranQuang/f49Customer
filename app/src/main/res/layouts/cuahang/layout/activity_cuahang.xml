@@ -40,7 +40,7 @@
                     android:background="@color/color_line_divider_light"
                     android:clipChildren="true"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:nestedScrollingEnabled="false">
 
             </androidx.recyclerview.widget.RecyclerView>

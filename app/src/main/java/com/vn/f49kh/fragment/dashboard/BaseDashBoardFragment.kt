@@ -2,6 +2,7 @@ package com.vn.f49kh.fragment.dashboard
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.vn.f49kh.R
 import com.vn.f49kh.activity.baoquan.BaoQuanActivity
 import com.vn.f49kh.activity.camdogiadung.CamdogiadungActivity
@@ -16,6 +17,7 @@ import com.vn.f49kh.activity.thanhly.ThanhLyActivity
 import com.vn.f49kh.adapter.service.ServiceAdapter
 import com.vn.f49kh.databinding.FragmentSeviceBinding
 import com.vn.f49kh.enumApp.DashboardTypeEnum
+import com.vn.f49kh.extension.checkLogin
 import com.vn.f49kh.model.home.ItemHomeDTO
 import com.xxx.baseproject.base.BaseMVVMFragment
 import com.xxx.baseproject.customview.CustomGridLayoutManager
@@ -68,16 +70,20 @@ open class BaseDashBoardFragment : BaseMVVMFragment<FragmentSeviceBinding, BaseD
                 DinhGiaTaiSanActivity.start(activity)
             }
             DashboardTypeEnum.CAM_DO.toString() -> {
-                DangKyCamDoActivity.start(activity)
+                DangKyCamDoActivity.start(activity,null)
             }
             DashboardTypeEnum.DO_GIA_DUNG.toString() -> {
                 CamdogiadungActivity.start(activity)
             }
             DashboardTypeEnum.TAI_SAN.toString() -> {
-                TaiSanActivity.start(activity)
+                (activity as AppCompatActivity).checkLogin {
+                    TaiSanActivity.start(activity)
+                }
             }
             DashboardTypeEnum.DONG_LAI.toString() -> {
-                DongLaiActivity.start(activity)
+                (activity as AppCompatActivity).checkLogin {
+                    DongLaiActivity.start(activity)
+                }
             }
             DashboardTypeEnum.THANH_LY.toString() -> {
                 ThanhLyActivity.start(activity)

@@ -3,8 +3,6 @@ package com.vn.f49kh.enumApp
 import com.vn.f49kh.F49Application
 import com.vn.f49kh.R
 
-enum class EnumApp {
-}
 
 enum class DashboardTypeEnum(var isForceLogin: Boolean) {
     DINH_GIA(false) {
@@ -52,32 +50,32 @@ enum class DashboardTypeEnum(var isForceLogin: Boolean) {
 
 }
 
-enum class DinhGiaTaiSanTypeEnum() {
-    OTO() {
+enum class DinhGiaTaiSanTypeEnum(var value : Int) {
+    OTO(1) {
         override fun getNameEnum() = R.string.oto
     },
-    XE_MAY() {
+    XE_MAY(2) {
         override fun getNameEnum() = R.string.xe_may
     },
-    LAP_TOP() {
+    LAP_TOP(3) {
         override fun getNameEnum() = R.string.lap_top
     },
-    DIEN_THOAI() {
+    DIEN_THOAI(4) {
         override fun getNameEnum() = R.string.dien_thoai
     },
-    TABLET() {
+    TABLET(5) {
         override fun getNameEnum() = R.string.tablet
     },
-    TIVI() {
+    TIVI(6) {
         override fun getNameEnum() = R.string.tivi
     },
-    MAY_ANH() {
+    MAY_ANH(7) {
         override fun getNameEnum() = R.string.may_anh
     },
-    SIM() {
+    SIM(8) {
         override fun getNameEnum() = R.string.sim
     },
-    KHAC() {
+    KHAC(9) {
         override fun getNameEnum() = R.string.khac
     };
 
@@ -86,5 +84,42 @@ enum class DinhGiaTaiSanTypeEnum() {
     }
 
     abstract fun getNameEnum(): Int
+
+}
+
+enum class ExpandType(value: Int) {
+    TAI_SAN(0) {
+        override fun getDong1(): String {
+            return "Ngày đến hạn : "
+        }
+
+        override fun getDong2(): String {
+            return "Nợ lãi đến hạn : "
+        }
+
+    },
+    DONG_LAI(1) {
+        override fun getDong1(): String {
+            return "Ngày đóng lãi: "
+        }
+
+        override fun getDong2(): String {
+            return "Lãi đóng : "
+        }
+
+    },
+    THANH_LY(2) {
+        override fun getDong1(): String {
+            return ""
+        }
+
+        override fun getDong2(): String {
+            return "Bộ nhớ RAM : "
+        }
+
+    };
+
+    abstract fun getDong1(): String
+    abstract fun getDong2(): String
 
 }

@@ -1,5 +1,7 @@
 package com.vn.f49kh.activity.login
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.vn.custom.util.PreferenceUtils
@@ -14,16 +16,20 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : BaseMVVMActivity<ActivityLoginBinding, LoginViewModel>() {
     var email: String? = null
     var password: String? = null
+
+    companion object {
+        val KEY_DATA = "isFromSplashActivity"
+        fun start(context: Context?) {
+            context?.startActivity(Intent(context, LoginActivity::class.java))
+        }
+    }
+
     override fun getLayout(): Int {
         return R.layout.activity_login
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        cvLogin.setOnClickListener {
-            MainActivity.start(this)
-
-        }
         initView()
         setEventClick()
     }
@@ -44,6 +50,7 @@ class LoginActivity : BaseMVVMActivity<ActivityLoginBinding, LoginViewModel>() {
 
 
     override fun observer() {
+        super.observer()
         mViewModel?.isLoginSuccessfully?.observe(this, Observer {
             if (it == true) {
 //                if (!tokenFireBase.isNullOrBlank()) {
@@ -55,7 +62,6 @@ class LoginActivity : BaseMVVMActivity<ActivityLoginBinding, LoginViewModel>() {
 //                    )
 //                }
                 PreferenceUtils.writeBoolean(this, PreferenceUtils.KEY_REMEMBER_LOGIN, cbRemember.isChecked)
-//                MainActivity.start(this)
                 finish()
             }
         })

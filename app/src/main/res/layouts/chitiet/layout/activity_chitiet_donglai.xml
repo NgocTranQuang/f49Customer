@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="data"
+                type="com.vn.f49kh.model.chitiet.ChiTietDongLaiDTO" />
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_screen"
+            android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_toolbar"
+                android:stateListAnimator="@animator/toolbar_elevated"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/tb"
+                    style="@style/CommonToolbar"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ScrollView
+                    style="@style/CommonScrollView"
+                    android:layout_above="@+id/lnBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_botttom_border_white"
+                            android:paddingBottom="@dimen/activity_horizontal_margin">
+
+                        <com.xxx.baseproject.imageslide.CustomRvWithIndicator
+                                android:id="@+id/imgSlide"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorWhite"
+                                app:color_selected="@color/colorPrimary"
+                                app:color_unSelected="@color/color_line_divider_light">
+
+                        </com.xxx.baseproject.imageslide.CustomRvWithIndicator>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            app:cardCornerRadius="@dimen/card_big_elevation">
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:orientation="vertical">
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="@{data.ten}"
+                                    android:textColor="#3a3a3a" />
+
+                            <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans"
+                                        android:text="@string/trang_thai" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="@{data.trangThai}"
+                                        android:textColor="@color/color_orange" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans"
+                                        android:text="@string/so_hop_dong" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:fontFamily="@font/open_sans"
+                                        android:text="@{data.soHD}" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans"
+                                        android:text="@string/ngay_hieu_luc" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:date="@{data.ngayHieuLuc}"
+                                        android:fontFamily="@font/open_sans" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans"
+                                        android:text="@string/no_goc_den_lai" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:money="@{data.noGocDenHan}"
+                                        android:textColor="@color/color_orange" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans"
+                                        android:text="@string/no_lai_den_han" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:money="@{data.noLaiDenHan}"
+                                        android:textColor="@color/color_orange" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/toolbar_half_padding_horizontal">
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans"
+                                        android:text="@string/ngay_den_han" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:date="@{data.ngayDenHan}"
+                                        android:fontFamily="@font/open_sans" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="@color/bg_line" />-->
+
+            <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/dp_175"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:gravity="center"-->
+            <!--android:paddingStart="@dimen/activity_horizontal_margin"-->
+            <!--android:paddingEnd="@dimen/activity_horizontal_margin">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fontFamily="@font/open_sans_bold"-->
+            <!--android:text="@string/gia_thanh_ly" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:fontFamily="@font/open_sans_bold"-->
+            <!--android:text="4.000.000 VND"-->
+            <!--android:textColor="@color/color_orange"-->
+            <!--android:textSize="@dimen/dp_60" />-->
+            <!--</RelativeLayout>-->
+            <!--</LinearLayout>-->
+
+            <LinearLayout
+                    android:id="@+id/lnBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/bg_line" />
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_175"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/activity_horizontal_margin"
+                        android:paddingEnd="@dimen/activity_horizontal_margin">
+
+                    <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btnCallHotLine"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_300"
+                            android:layout_marginEnd="@dimen/dp_300"
+                            app:cardBackgroundColor="@color/colorPrimary"
+                            app:cardCornerRadius="@dimen/card_big_elevation">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableStart="@drawable/ic_call"
+                                android:drawablePadding="@dimen/activity_horizontal_margin"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:gravity="center"
+                                android:paddingStart="@dimen/activity_horizontal_margin"
+                                android:paddingTop="@dimen/toolbar_half_padding_horizontal"
+                                android:paddingEnd="@dimen/activity_horizontal_margin"
+                                android:paddingBottom="@dimen/toolbar_half_padding_horizontal"
+                                android:text="@string/lien_he"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorWhite" />
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

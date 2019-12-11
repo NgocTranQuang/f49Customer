@@ -1,8 +1,13 @@
 package com.vn.f49kh.utils
 
+import android.content.Context
 import android.view.animation.Animation.RELATIVE_TO_SELF
 import android.view.animation.RotateAnimation
 import android.widget.ImageView
+import androidx.core.content.ContextCompat.startActivity
+import android.content.Intent
+import android.net.Uri
+
 
 class Utils {
     companion object {
@@ -18,6 +23,11 @@ class Utils {
             rotate.duration = 300
             rotate.fillAfter = true
             imageView.startAnimation(rotate)
+        }
+        fun callHotLine(context: Context){
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:0906039049")
+            context.startActivity(intent)
         }
     }
 

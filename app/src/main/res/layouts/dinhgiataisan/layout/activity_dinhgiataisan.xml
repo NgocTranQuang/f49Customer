@@ -78,7 +78,8 @@
                                         android:layout_height="wrap_content"
                                         android:text="@string/nhap_thong_tin_tai_san" />
 
-                                <EditText
+                                <AutoCompleteTextView
+                                        android:id="@+id/edtInfoProduct"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="@dimen/activity_horizontal_margin"
@@ -122,6 +123,7 @@
                                         android:text="@string/thong_tin_lien_he" />
 
                                 <EditText
+                                        android:id="@+id/edtFullName"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="@dimen/activity_horizontal_margin"
@@ -137,9 +139,11 @@
                                         android:text="@string/so_dien_thoai" />
 
                                 <EditText
+                                        android:id="@+id/edtPhoneNumber"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                        android:inputType="number"
                                         android:layout_marginBottom="@dimen/activity_horizontal_margin"
                                         android:background="@drawable/bg_boder_gray"
                                         android:fontFamily="@font/open_sans"
@@ -186,6 +190,7 @@
             </androidx.core.widget.NestedScrollView>
 
             <LinearLayout
+                    android:id="@+id/lnBottom"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_173"
                     android:layout_alignParentBottom="true"
