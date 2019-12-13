@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
 import com.vn.f49kh.R
+import com.vn.f49kh.activity.webview.WebViewActivity
 import com.vn.f49kh.adapter.home.HomeAdapter
 import com.vn.f49kh.binding.binImageUrl
 import com.vn.f49kh.databinding.FragmentHomeBinding
@@ -35,10 +36,15 @@ class HomeFragment : BaseMVVMFragment<FragmentHomeBinding, HomeViewModel>() {
             Utils.callHotLine(activity!!)
         }
         mViewModel?.listImage?.observe(this, Observer {
+            var list = it?.map { it.url ?: "" }?.toMutableList()
             imgSlide.setListImage(
-                it, 0
+                list, 0
             )
         })
+        imgSlide.setEventClickBanner { view, i ->
+            var linkWebView = mViewModel?.listImage?.value?.get(i)?.linkWebView
+            WebViewActivity.start(activity, "")
+        }
     }
 
 

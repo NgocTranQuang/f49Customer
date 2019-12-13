@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -48,9 +47,12 @@ class CustomRvWithIndicator(context: Context, attrs: AttributeSet?, defStyleAttr
 //            var mediaStyle = a.getInt(R.styleable.custom_rv_with_indicator_stype, ContentProductTypeEnum.IMAGE.getTypeNumber())
 
             adapterBanner = AdapterBanner(mutableListOf(), false, 0) { view, po ->
-                //                eventClickImageBanner?.invoke(view, po)
-                if(listImage.size>0) {
-                    ImageViewer.Builder(context, listImage).setStartPosition(po).show()
+                if(eventClickImageBanner!=null) {
+                    eventClickImageBanner?.invoke(view, po)
+                }else {
+                    if (listImage.size > 0) {
+                        ImageViewer.Builder(context, listImage).setStartPosition(po).show()
+                    }
                 }
 
             }

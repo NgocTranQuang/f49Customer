@@ -7,5 +7,5 @@ class ImageDTO {
     var url: String? = null
     var name: String? = null
     var extention: String? = null
-
+    var linkWebView: String? = null
 }

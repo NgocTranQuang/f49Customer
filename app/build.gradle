@@ -51,7 +51,7 @@ android {
 
     sourceSets {
         main {
-            res.srcDirs = ['src/main/res', 'src/main/res/layouts/login', 'src/main/res/layouts/main', 'src/main/res/layouts/home', 'src/main/res/layouts/slideimage', 'src/main/res/layouts/service', 'src/main/res/layouts/profile', 'src/main/res/layouts/dinhgiataisan', 'src/main/res/layouts/camdo', 'src/main/res/camdogiadung', 'src/main/res/layouts/camdogiadung', 'src/main/res/layouts/taisan', 'src/main/res/layouts/cuahang', 'src/main/res/layouts/chitiet', 'src/main/res/layouts/lienhe', 'src/main/res/layouts/huongdan', 'src/main/res/layouts/baoquan', 'src/main/res/layouts/customview']
+            res.srcDirs = ['src/main/res', 'src/main/res/layouts/login', 'src/main/res/layouts/main', 'src/main/res/layouts/home', 'src/main/res/layouts/slideimage', 'src/main/res/layouts/service', 'src/main/res/layouts/profile', 'src/main/res/layouts/dinhgiataisan', 'src/main/res/layouts/camdo', 'src/main/res/camdogiadung', 'src/main/res/layouts/camdogiadung', 'src/main/res/layouts/taisan', 'src/main/res/layouts/cuahang', 'src/main/res/layouts/chitiet', 'src/main/res/layouts/lienhe', 'src/main/res/layouts/huongdan', 'src/main/res/layouts/baoquan', 'src/main/res/layouts/customview', 'src/main/res/layouts/webview']
         }
     }
 }

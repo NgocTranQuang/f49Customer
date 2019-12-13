@@ -57,6 +57,7 @@
         <activity android:name=".activity.baoquan.BaoQuanActivity" />
         <activity android:name=".activity.main.MainActivity" />
         <activity android:name=".activity.chitiet.ChiTietThanhLyActivity" />
+        <activity android:name=".activity.webview.WebViewActivity" />
 
         <meta-data
                 android:name="preloaded_fonts"
