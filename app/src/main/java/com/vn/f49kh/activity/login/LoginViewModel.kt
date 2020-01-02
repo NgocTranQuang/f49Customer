@@ -1,6 +1,7 @@
 package com.vn.f49kh.activity.login
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.app.f49.model.login.LoginDTO
 import com.google.gson.Gson
@@ -9,6 +10,8 @@ import com.vn.custom.util.PreferenceUtils
 import com.vn.f49kh.R
 import com.vn.f49kh.activity.BaseF49ViewModel
 import com.vn.f49kh.base.Base
+import com.vn.f49kh.extension.checkRequest
+import com.vn.f49kh.utils.GeneralUtils
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import retrofit2.HttpException
@@ -74,4 +77,22 @@ class LoginViewModel(app: Application) : BaseF49ViewModel(app) {
             })
     }
 
+    fun pushTokenFirebase(email: String, token: String, deviceName: String, flg: Boolean) {
+        if (email.isNullOrBlank() || token.isNullOrBlank()) {
+            showDialogError(mContext.getString(R.string.provide_account))
+            return
+        }
+        mApiService?.pushFirebaseToken(
+            email, token, GeneralUtils.getDeviceId(mContext)
+                ?: "", flg
+        ).checkRequest(mContext)?.subscribe({
+            Log.d("push", "thanh cong")
+        }, {
+            Log.d("push", "thanh cong")
+
+        }, {
+            Log.d("push", "thanh cong")
+
+        })
+    }
 }

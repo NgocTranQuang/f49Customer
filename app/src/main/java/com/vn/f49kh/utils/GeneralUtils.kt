@@ -1,4 +1,4 @@
-package com.vn.f49kh.service
+package com.vn.f49kh.utils
 
 import android.app.Activity
 import android.app.ActivityOptions
@@ -6,6 +6,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
+import android.os.Handler
 import android.provider.Settings
 import android.text.TextUtils
 import android.util.DisplayMetrics
@@ -84,6 +85,7 @@ object GeneralUtils {
     }
 
 
+
     fun getDeviceName(): String {
         val manufacturer = Build.MANUFACTURER
         val model = Build.MODEL
@@ -152,7 +154,7 @@ object GeneralUtils {
             e.printStackTrace()
         }
 
-        return ""
+        return Constant.EMPTY_STRING
     }
 
     fun validEmail(email: String): Boolean {
@@ -255,7 +257,6 @@ object GeneralUtils {
         }
 
     }
-
     fun isPhoneNumberFormat(edt: EditText): Boolean {
         var number = edt.text.toString()
         if(number.length !=10){
@@ -274,5 +275,4 @@ object GeneralUtils {
         val matcher = pattern.matcher(email)
         return matcher.matches()
     }
-
 }

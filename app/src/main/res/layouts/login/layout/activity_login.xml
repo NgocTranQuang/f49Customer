@@ -133,29 +133,29 @@
 
                     </androidx.cardview.widget.CardView>
 
-                    <TextView
-                            android:id="@+id/tvForgotPassword"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/activity_horizontal_margin"
-                            android:fontFamily="@font/open_sans"
-                            android:visibility="gone"
-                            android:text="@string/quen_mat_khau"
-                            android:textColor="#329fef"
-                            android:textSize="@dimen/dp_36" />
+                    <!--<TextView-->
+                            <!--android:id="@+id/tvForgotPassword"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+                            <!--android:fontFamily="@font/open_sans"-->
+                            <!--android:visibility="gone"-->
+                            <!--android:text="@string/quen_mat_khau"-->
+                            <!--android:textColor="#329fef"-->
+                            <!--android:textSize="@dimen/dp_36" />-->
 
-                    <CheckBox
-                            android:id="@+id/cbRemember"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:visibility="gone"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="@dimen/card_elevation"
-                            android:layout_marginTop="@dimen/toolbar_half_padding_horizontal"
-                            android:fontFamily="@font/open_sans"
-                            android:text="@string/tu_dong_dap_nhap_lan_sau"
-                            android:textSize="@dimen/dp_36" />
+                    <!--<CheckBox-->
+                            <!--android:id="@+id/cbRemember"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:visibility="gone"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_marginStart="@dimen/card_elevation"-->
+                            <!--android:layout_marginTop="@dimen/toolbar_half_padding_horizontal"-->
+                            <!--android:fontFamily="@font/open_sans"-->
+                            <!--android:text="@string/tu_dong_dap_nhap_lan_sau"-->
+                            <!--android:textSize="@dimen/dp_36" />-->
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

@@ -23,7 +23,7 @@ android {
         minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
-        versionName "1.6"
+        versionName "1.7.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
@@ -31,13 +31,13 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            buildConfigField "String", "BASE_URL", '"http://api.f49.vn/"'
+            buildConfigField "String", "BASE_URL", '"http://f49.vn/"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
             buildConfigField "String", "BASE_URL", '"http://f49.itpsolution.net/"'
-//            buildConfigField "String", "BASE_URL", '"http://f49web.lan/api/"'
+//            buildConfigField "String", "BASE_URL", '"http://f49.vn/"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -48,7 +48,12 @@ android {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
     }
-
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
     sourceSets {
         main {
             res.srcDirs = ['src/main/res', 'src/main/res/layouts/login', 'src/main/res/layouts/main', 'src/main/res/layouts/home', 'src/main/res/layouts/slideimage', 'src/main/res/layouts/service', 'src/main/res/layouts/profile', 'src/main/res/layouts/dinhgiataisan', 'src/main/res/layouts/camdo', 'src/main/res/camdogiadung', 'src/main/res/layouts/camdogiadung', 'src/main/res/layouts/taisan', 'src/main/res/layouts/cuahang', 'src/main/res/layouts/chitiet', 'src/main/res/layouts/lienhe', 'src/main/res/layouts/huongdan', 'src/main/res/layouts/baoquan', 'src/main/res/layouts/customview', 'src/main/res/layouts/webview']
@@ -83,4 +88,11 @@ dependencies {
     // For FrescoImageViewer
     implementation 'com.github.stfalcon:frescoimageviewer:0.5.0'
     implementation "com.facebook.fresco:fresco:1.2.0"
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.google.firebase:firebase-messaging:18.0.0'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+
+    // For badge
+    implementation "me.leolin:ShortcutBadger:1.1.22@aar"
 }
+apply plugin: 'com.google.gms.google-services'

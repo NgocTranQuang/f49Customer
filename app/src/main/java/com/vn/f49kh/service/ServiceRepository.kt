@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder
 import com.vn.custom.util.Constant
 import com.vn.custom.util.PreferenceUtils
 import com.vn.f49kh.BuildConfig
+import com.vn.f49kh.utils.GeneralUtils
 import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
@@ -79,15 +80,15 @@ class ServiceRepository {
                 val original = chain.request()
 
                 val request = original.newBuilder()
-                    .header(HEADER_DEVICE_ID, GeneralUtils.getDeviceId(context))
-                    .header(HEADER_DEVICE_NAME, GeneralUtils.getDeviceName())
+                    .header(HEADER_DEVICE_ID, GeneralUtils.getDeviceId(context) ?:"")
+                    .header(HEADER_DEVICE_NAME, GeneralUtils.getDeviceName() ?:"")
                     .header(
                         HEADER_LANGUAGE_ID,
-                        PreferenceUtils.getString(context, PreferenceUtils.KEY_LANGUAGE_ID, Constant.EMPTY_STRING)
+                        PreferenceUtils.getString(context, PreferenceUtils.KEY_LANGUAGE_ID, Constant.EMPTY_STRING) ?:""
                     )
                     .header(
                         HEADER_TOKEN,
-                        PreferenceUtils.getString(context, PreferenceUtils.KEY_TOKEN, Constant.EMPTY_STRING)
+                        PreferenceUtils.getString(context, PreferenceUtils.KEY_TOKEN, Constant.EMPTY_STRING)?:""
                     )
                     .method(original.method(), original.body())
                     .build()

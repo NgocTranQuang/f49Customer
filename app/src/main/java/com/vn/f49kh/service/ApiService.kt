@@ -3,23 +3,27 @@ package com.vn.f49kh.service
 import com.app.f49.model.login.LoginDTO
 import com.vn.f49kh.model.BaseResponse
 import com.vn.f49kh.model.CuaHangDTO
+import com.vn.f49kh.model.chitiet.ChiTietDTO
 import com.vn.f49kh.model.chitiet.ChiTietDongLaiDTO
 import com.vn.f49kh.model.dinhgiataisan.UploadImageDTO
 import com.vn.f49kh.model.image.ImageDTO
 import com.vn.f49kh.model.taisan.TaiSanTypeDTO
 import io.reactivex.Observable
-import okhttp3.ResponseBody
-import retrofit2.Call
 import retrofit2.http.*
 
 
-interface ApiService {
+interface
+
+ApiService {
     companion object {
         const val API_LOGIN = "api/Login/"
         const val API_TAISAN = "api/TaiSan/"
         const val API_DONG_LAI = "api/DongLai/"
         const val API_MOBILE_APP = "api/MobileApp/"
+        const val API_BANNER_APP = "api/BannerApp/"
         const val API_HANG_THANH_LY = "api/HangThanhLy/"
+        const val API_FIREBASE = "api/ManageFireBase/"
+
     }
 
     /**
@@ -87,8 +91,11 @@ interface ApiService {
     @GET(API_HANG_THANH_LY + "GetDanhSachHangThanhLy")
     fun getDanhSachHangThanhLy(): Observable<BaseResponse<MutableList<TaiSanTypeDTO>?>>
 
+//    @GET(API_HANG_THANH_LY + "GetChiTietHangThanhLy")
+//    fun getChiTietThanhLy(@Query("idHangThanhLy") idHangThanhLy: Int?): Call<ResponseBody>
+
     @GET(API_HANG_THANH_LY + "GetChiTietHangThanhLy")
-    fun getChiTietThanhLy(@Query("idHangThanhLy") idHangThanhLy: Int?): Call<ResponseBody>
+    fun getChiTietThanhLy(@Query("idHangThanhLy") idHangThanhLy: Int?): Observable<BaseResponse<ChiTietDTO?>>
 
     @PUT(API_MOBILE_APP + "LienHe")
     fun putLienHe(
@@ -100,7 +107,14 @@ interface ApiService {
     @GET(API_MOBILE_APP + "GetDanhSachHangTheoHangMuc")
     fun getDanhMucSanPham(@Query("typeLoaiTaiSan") typeLoaiTaiSan: String, @Query("keyWord") keyWord: String?): Observable<BaseResponse<MutableList<String>?>>
 
-    @GET(API_MOBILE_APP + "GetBannerImage")
+    @GET(API_BANNER_APP + "GetImage")
     fun getBannerImage(): Observable<BaseResponse<MutableList<ImageDTO>?>>
+
+    /*
+    * Push firebase token
+    * */
+
+    @PUT(API_FIREBASE + "PutFireBase")
+    fun pushFirebaseToken(@Query("soCMND") email: String?, @Query("token") token: String?, @Query("deviceName") deviceName: String?, @Query("flg") flg: Boolean?): Observable<BaseResponse<Int>>
 
 }

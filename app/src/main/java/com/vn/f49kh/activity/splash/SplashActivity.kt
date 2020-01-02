@@ -22,28 +22,28 @@ class SplashActivity : BaseActivity() {
 //                startLoginActivity()
 //                return@postDelayed
 //            }
-            if (!PreferenceUtils.getBoolean(this, PreferenceUtils.KEY_IS_LOGOUT, true)) {
-//                if (PreferenceUtils.getBoolean(this, PreferenceUtils.KEY_REMEMBER_LOGIN, false)) {
-                var viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
-                var email = PreferenceUtils.getString(this, PreferenceUtils.KEY_EMAIL, "") ?: ""
-                var password = PreferenceUtils.getString(this, PreferenceUtils.KEY_PASSWORD, "") ?: ""
-                viewModel.login(email, password)
-                viewModel?.isLoginSuccessfully?.observe(this, Observer {
-                    if (it == true) {
-                        startActivity(Intent(this, MainActivity::class.java))
-                    } else {
-                        PreferenceUtils.writeBoolean(
-                            this, PreferenceUtils.KEY_IS_LOGOUT, true
-                        )
-                        startActivity(Intent(this, MainActivity::class.java))
-                    }
-                })
-//                } else {
-//                    startActivity(Intent(this, MainActivity::class.java))
-//                }
-            } else {
+//            if (!PreferenceUtils.getBoolean(this, PreferenceUtils.KEY_IS_LOGOUT, true)) {
+////                if (PreferenceUtils.getBoolean(this, PreferenceUtils.KEY_REMEMBER_LOGIN, false)) {
+//                var viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
+//                var email = PreferenceUtils.getString(this, PreferenceUtils.KEY_EMAIL, "") ?: ""
+//                var password = PreferenceUtils.getString(this, PreferenceUtils.KEY_PASSWORD, "") ?: ""
+//                viewModel.login(email, password)
+//                viewModel?.isLoginSuccessfully?.observe(this, Observer {
+//                    if (it == true) {
+//                        startActivity(Intent(this, MainActivity::class.java))
+//                    } else {
+//                        PreferenceUtils.writeBoolean(
+//                            this, PreferenceUtils.KEY_IS_LOGOUT, true
+//                        )
+//                        startActivity(Intent(this, MainActivity::class.java))
+//                    }
+//                })
+////                } else {
+////                    startActivity(Intent(this, MainActivity::class.java))
+////                }
+//            } else {
                 startActivity(Intent(this, MainActivity::class.java))
-            }
+//            }
         }, DELAY_TIME)
     }
 

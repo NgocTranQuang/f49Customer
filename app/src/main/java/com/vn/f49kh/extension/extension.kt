@@ -13,8 +13,8 @@ import com.vn.custom.util.GeneralUtil
 import com.vn.f49kh.R
 import com.vn.f49kh.activity.login.LoginActivity
 import com.vn.f49kh.deco.DividerItemDecoration
-import com.vn.f49kh.service.GeneralUtils
 import com.vn.f49kh.utils.Constant
+import com.vn.f49kh.utils.GeneralUtils
 import com.vn.f49kh.utils.ImageUtil
 import java.text.NumberFormat
 import java.text.SimpleDateFormat

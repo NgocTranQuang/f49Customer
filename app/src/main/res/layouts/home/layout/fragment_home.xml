@@ -68,7 +68,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/activity_horizontal_margin"
                             android:layout_marginTop="@dimen/activity_horizontal_margin"
-                            android:text="@string/dang_ky_cam_do" />
+                            android:text="@string/dang_ky_cam_do"
+                            android:textAllCaps="true" />
 
                     <RelativeLayout
                             android:layout_width="match_parent"
@@ -105,49 +106,154 @@
                                     </androidx.recyclerview.widget.RecyclerView>
 
                                     <!--<com.facebook.shimmer.ShimmerFrameLayout-->
-                                            <!--android:id="@+id/shimmer"-->
-                                            <!--android:layout_width="match_parent"-->
-                                            <!--android:layout_height="match_parent">-->
+                                    <!--android:id="@+id/shimmer"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="match_parent">-->
 
 
-                                        <!--<LinearLayout-->
-                                                <!--android:layout_width="match_parent"-->
-                                                <!--android:layout_height="match_parent"-->
-                                                <!--android:orientation="horizontal"-->
-                                                <!--android:weightSum="2">-->
+                                    <!--<LinearLayout-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:orientation="horizontal"-->
+                                    <!--android:weightSum="2">-->
 
-                                            <!--<LinearLayout-->
-                                                    <!--android:layout_width="0dp"-->
-                                                    <!--android:layout_height="match_parent"-->
-                                                    <!--android:layout_marginEnd="@dimen/height_line_size"-->
-                                                    <!--android:layout_weight="1"-->
-                                                    <!--android:orientation="vertical">-->
+                                    <!--<LinearLayout-->
+                                    <!--android:layout_width="0dp"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:layout_marginEnd="@dimen/height_line_size"-->
+                                    <!--android:layout_weight="1"-->
+                                    <!--android:orientation="vertical">-->
 
-                                                <!--<include layout="@layout/row_playholder_home" />-->
-
-
-                                                <!--<include layout="@layout/row_playholder_home" />-->
-
-                                            <!--</LinearLayout>-->
-
-                                            <!--<LinearLayout-->
-                                                    <!--android:layout_width="0dp"-->
-                                                    <!--android:layout_height="match_parent"-->
-                                                    <!--android:layout_weight="1"-->
-                                                    <!--android:orientation="vertical">-->
-
-                                                <!--<include layout="@layout/row_playholder_home" />-->
-
-                                                <!--<include layout="@layout/row_playholder_home" />-->
+                                    <!--<include layout="@layout/row_playholder_home" />-->
 
 
-                                            <!--</LinearLayout>-->
-                                        <!--</LinearLayout>-->
+                                    <!--<include layout="@layout/row_playholder_home" />-->
+
+                                    <!--</LinearLayout>-->
+
+                                    <!--<LinearLayout-->
+                                    <!--android:layout_width="0dp"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:layout_weight="1"-->
+                                    <!--android:orientation="vertical">-->
+
+                                    <!--<include layout="@layout/row_playholder_home" />-->
+
+                                    <!--<include layout="@layout/row_playholder_home" />-->
+
+
+                                    <!--</LinearLayout>-->
+                                    <!--</LinearLayout>-->
 
                                     <!--</com.facebook.shimmer.ShimmerFrameLayout>-->
                                 </RelativeLayout>
                             </RelativeLayout>
                         </com.google.android.material.card.MaterialCardView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                            android:id="@+id/lnTitleThanhLy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:text="@string/thanh_ly"
+                                android:textAllCaps="true" />
+
+                        <TextView
+                                android:id="@+id/tvXemTatCaThanhLy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                                android:text="@string/view_all"
+                                android:textColor="@color/colorPrimary" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                            android:id="@+id/lnThanhLy"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clipToPadding="false"
+                            android:padding="@dimen/activity_horizontal_margin">
+
+                        <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_752"
+                                android:orientation="vertical">
+
+                            <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_above="@+id/pageIndicatorView">
+
+                                <TextView
+                                        android:id="@+id/tvNoDataThanhLy"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="@string/no_data" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rvThanhLy"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/color_line_divider_light"
+                                        android:nestedScrollingEnabled="false"
+                                        android:orientation="horizontal"
+                                        android:overScrollMode="never">
+
+                                </androidx.recyclerview.widget.RecyclerView>
+
+                                <!--<com.facebook.shimmer.ShimmerFrameLayout-->
+                                <!--android:id="@+id/shimmer"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent">-->
+
+
+                                <!--<LinearLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:orientation="horizontal"-->
+                                <!--android:weightSum="2">-->
+
+                                <!--<LinearLayout-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_marginEnd="@dimen/height_line_size"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:orientation="vertical">-->
+
+                                <!--<include layout="@layout/row_playholder_home" />-->
+
+
+                                <!--<include layout="@layout/row_playholder_home" />-->
+
+                                <!--</LinearLayout>-->
+
+                                <!--<LinearLayout-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:orientation="vertical">-->
+
+                                <!--<include layout="@layout/row_playholder_home" />-->
+
+                                <!--<include layout="@layout/row_playholder_home" />-->
+
+
+                                <!--</LinearLayout>-->
+                                <!--</LinearLayout>-->
+
+                                <!--</com.facebook.shimmer.ShimmerFrameLayout>-->
+                            </RelativeLayout>
+                        </RelativeLayout>
                     </RelativeLayout>
 
                     <LinearLayout
@@ -168,8 +274,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="@dimen/activity_horizontal_margin"
                                 android:layout_marginStart="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
                                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                                 android:gravity="center"
                                 android:text="@string/content_about_us"
@@ -202,10 +308,10 @@
 
                             <ImageView
                                     android:id="@+id/imgHome"
-                                    android:scaleType="centerCrop"
                                     android:layout_width="match_parent"
                                     android:layout_height="@dimen/dp_689"
                                     android:layout_gravity="center"
+                                    android:scaleType="centerCrop"
                                     android:src="@drawable/ic_eye_unshow" />
                         </com.google.android.material.card.MaterialCardView>
 
@@ -222,8 +328,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_centerInParent="true"
                     android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
                     android:layout_margin="@dimen/activity_horizontal_margin"
                     android:src="@drawable/ic_home_float_button"
                     app:backgroundTint="#476845" />

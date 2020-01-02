@@ -7,14 +7,12 @@ import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import com.vn.f49kh.R
 import com.vn.f49kh.activity.BaseF49Activity
-import com.vn.f49kh.adapter.chitiet.ChiTietAdapter
 import com.vn.f49kh.databinding.ActivityChitietBinding
-import com.vn.f49kh.extension.init
 import kotlinx.android.synthetic.main.activity_chitiet.*
 
 class ChiTietThanhLyActivity : BaseF49Activity<ActivityChitietBinding, ChiTietViewModel>() {
 
-    var adapter: ChiTietAdapter? = null
+//    var adapter: ChiTietAdapter? = null
 
     companion object {
         val KEY_DATA_ID_HOP_DONG = "KEY_DATA_ID_HOP_DONG"
@@ -42,12 +40,12 @@ class ChiTietThanhLyActivity : BaseF49Activity<ActivityChitietBinding, ChiTietVi
 
     override fun observer() {
         super.observer()
-        rvData.init()
-        adapter = ChiTietAdapter(mutableListOf())
-        rvData.adapter = adapter
-        mViewModel?.chiTietThanhLy?.observe(this, Observer {
-            adapter?.insertData(it ?: mutableListOf())
-        })
+//        rvData.init()
+//        adapter = ChiTietAdapter(mutableListOf())
+//        rvData.adapter = adapter
+//        mViewModel?.chiTietThanhLy?.observe(this, Observer {
+////            adapter?.insertData(it ?: mutableListOf())
+//        })
         mViewModel?.price?.observe(this, Observer {
             tvPrice.text = it ?: ""
         })
@@ -56,6 +54,9 @@ class ChiTietThanhLyActivity : BaseF49Activity<ActivityChitietBinding, ChiTietVi
         })
         mViewModel?.nameProduct?.observe(this, Observer {
             tvName.text = it
+        })
+        mViewModel?.noidung?.observe(this, Observer {
+            tvNoiDung.text = it ?: getString(R.string.no_des)
         })
     }
 

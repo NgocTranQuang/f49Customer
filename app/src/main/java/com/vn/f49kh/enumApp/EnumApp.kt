@@ -50,7 +50,7 @@ enum class DashboardTypeEnum(var isForceLogin: Boolean) {
 
 }
 
-enum class DinhGiaTaiSanTypeEnum(var value : Int) {
+enum class DinhGiaTaiSanTypeEnum(var value: Int) {
     OTO(1) {
         override fun getNameEnum() = R.string.oto
     },
@@ -122,4 +122,11 @@ enum class ExpandType(value: Int) {
     abstract fun getDong1(): String
     abstract fun getDong2(): String
 
+}
+
+enum class ScreenIDEnum(var value: String) {
+    DONG_LAI("AppKhachHang_DongLai"),
+    CHI_TIET_DONG_LAI("AppKhachHang_DongLai_ChiTiet"),
+    THANH_LY("AppKhachHang_RaoBanTaiSan"),
+    THANH_LY_CHI_TIET("AppKhachHang_TaiSanDangRaoBan_ChiTiet")
 }

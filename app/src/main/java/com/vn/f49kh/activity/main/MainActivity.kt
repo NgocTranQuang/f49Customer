@@ -6,13 +6,18 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Log
 import android.view.WindowManager
 import androidx.fragment.app.Fragment
+import com.app.f49.firebase.MyFirebaseMessagingService
+import com.app.f49.model.notification.NotificationVO
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.vn.custom.activity.base.BaseActivity
 import com.vn.custom.util.GeneralUtil
 import com.vn.f49kh.R
 import com.vn.f49kh.activity.login.LoginActivity
+import com.vn.f49kh.extension.handleScreenId
 import com.vn.f49kh.fragment.Home.HomeFragment
 import com.vn.f49kh.fragment.dashboard.other.OtherFragment
 import com.vn.f49kh.fragment.dashboard.service.ServiceFragment
@@ -69,6 +74,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initTab()
+        handleIntent(intent)
         displayFragment(HomeFragment())
 
     }
@@ -143,4 +149,57 @@ class MainActivity : BaseActivity() {
         nav_view.selectedItemId = R.id.tab_home
     }
 
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        if (intent == null) {
+            log("intent null")
+        } else {
+            log("intent # null")
+        }
+        handleIntent(intent)
+    }
+    fun log(msg: String) {
+        Log.d("MainActivityNewIntent", msg)
+    }
+    fun handleIntent(intent: Intent?) {
+        var idItem = intent?.getStringExtra(MyFirebaseMessagingService.ITEMID)
+        var idScreen = intent?.getStringExtra(MyFirebaseMessagingService.SCREENID)
+        if (idItem == null) {
+            if (intent?.extras != null) {
+                var notification = getDataFromBackgroundNotification(intent.extras)
+                idItem = notification.itemId
+                idScreen = notification.screenId
+            }
+        }
+        this.handleScreenId(idScreen, idItem)
+    }
+
+    private fun getDataFromBackgroundNotification(bundle: Bundle): NotificationVO {
+        val notitication = NotificationVO()
+        for (key in bundle.keySet()) {
+            val value = bundle.get(key)
+            log(MyFirebaseMessagingService.TAG + "Key: " + key + " Value: " + value)
+            if (TextUtils.equals(key, MyFirebaseMessagingService.ITEMID)) {
+                notitication.itemId = bundle.get(key)?.toString()
+            }
+            if (TextUtils.equals(key, MyFirebaseMessagingService.SCREENID)) {
+                notitication.screenId = bundle.get(key)?.toString()
+            }
+
+            if (TextUtils.equals(key, MyFirebaseMessagingService.TITLE)) {
+                notitication.title = bundle.get(key)?.toString()
+            }
+//            if (TextUtils.equals(key, EOfficeFirebaseMessagingService.KEY_SITE_URL)) {
+//                action.setSiteUrl(bundle.get(key)!!.toString())
+//            }
+//            if (TextUtils.equals(key, EOfficeFirebaseMessagingService.KEY_ITEM_ID)) {
+//                val itemIdStr = bundle.get(key)!!.toString()
+//                action.setItemId(if (TextUtils.isEmpty(itemIdStr)) 0 else Integer.parseInt(itemIdStr))
+//            }
+//            if (TextUtils.equals(key, EOfficeFirebaseMessagingService.KEY_COMPANY_ID)) {
+//                action.setCompanyId(bundle.get(key)!!.toString())
+//            }
+        }
+        return notitication
+    }
 }

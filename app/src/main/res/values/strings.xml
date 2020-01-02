@@ -120,4 +120,6 @@
     <string name="change_password_ss">Thay đổi mật khẩu thành công</string>
     <string name="da_gui_yeu_cau_lien_he">Đã gửi yêu cầu liên hệ</string>
     <string name="invalid_data">Xin vui lòng nhập đầy đủ và đúng thông tin.</string>
+    <string name="no_des">Không có mô tả nào.</string>
+    <string name="view_all">Xem tất cả</string>
 </resources>
